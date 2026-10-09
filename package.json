@@ -1,0 +1,15 @@
+{
+  "name": "telecommerce-miniapp",
+  "private": true,
+  "scripts": {
+    "dev": "bash scripts/dev.sh",
+    "dev:bot": "pnpm --filter @tce/bot dev",
+    "dev:tma": "pnpm --filter @tce/tma dev",
+    "typecheck": "pnpm -r typecheck"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild"
+    ]
+  }
+}

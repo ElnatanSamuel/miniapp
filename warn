@@ -1,0 +1,164 @@
+t=2026-10-09T11:13:54+0300 lvl=info msg="no configuration paths supplied"
+t=2026-10-09T11:13:54+0300 lvl=info msg="using configuration at default config path" path="/Users/mac/Library/Application Support/ngrok/ngrok.yml"
+t=2026-10-09T11:13:54+0300 lvl=info msg="open config file" path="/Users/mac/Library/Application Support/ngrok/ngrok.yml" err=<nil>
+t=2026-10-09T11:13:54+0300 lvl=info msg="FIPS 140 mode" enabled=false
+t=2026-10-09T11:13:54+0300 lvl=info msg="starting web service" obj=web addr=127.0.0.1:4040 allow_hosts=[]
+t=2026-10-09T11:13:54+0300 lvl=info msg=start pg=/api/tunnels id=05d41c05e594d78e
+t=2026-10-09T11:13:54+0300 lvl=info msg=end pg=/api/tunnels id=05d41c05e594d78e status=200 dur=185.375µs
+t=2026-10-09T11:13:55+0300 lvl=info msg="client session established" obj=tunnels.session
+t=2026-10-09T11:13:55+0300 lvl=info msg="tunnel session started" obj=tunnels.session
+t=2026-10-09T11:13:55+0300 lvl=info msg="started tunnel" obj=tunnels name=command_line addr=http://localhost:5173 url=https://giddy-matchbook-prognosis.ngrok-free.dev
+t=2026-10-09T11:13:55+0300 lvl=info msg=start pg=/api/tunnels id=89cda00ab04a6984
+t=2026-10-09T11:13:55+0300 lvl=info msg=end pg=/api/tunnels id=89cda00ab04a6984 status=200 dur=56.292µs
+t=2026-10-09T11:13:56+0300 lvl=info msg="INFO received stop request obj=app stopReq=\"{err:<nil> restart:false}\""
+t=2026-10-09T11:13:56+0300 lvl=info msg="session closing" obj=tunnels.session err=<nil>
+t=2026-10-09T11:13:56+0300 lvl=info msg="accept failed" obj=tunnels.session err="reconnecting session closed" obj=csess id=d217de13ea0a
+t=2026-10-09T11:18:20+0300 lvl=info msg="no configuration paths supplied"
+t=2026-10-09T11:18:20+0300 lvl=info msg="using configuration at default config path" path="/Users/mac/Library/Application Support/ngrok/ngrok.yml"
+t=2026-10-09T11:18:20+0300 lvl=info msg="open config file" path="/Users/mac/Library/Application Support/ngrok/ngrok.yml" err=<nil>
+t=2026-10-09T11:18:20+0300 lvl=info msg="FIPS 140 mode" enabled=false
+t=2026-10-09T11:18:20+0300 lvl=info msg="starting web service" obj=web addr=127.0.0.1:4040 allow_hosts=[]
+t=2026-10-09T11:18:21+0300 lvl=info msg=start pg=/api/tunnels id=1a778c982fda8303
+t=2026-10-09T11:18:21+0300 lvl=info msg=end pg=/api/tunnels id=1a778c982fda8303 status=200 dur=195.25µs
+t=2026-10-09T11:18:21+0300 lvl=info msg="client session established" obj=tunnels.session
+t=2026-10-09T11:18:21+0300 lvl=info msg="tunnel session started" obj=tunnels.session
+t=2026-10-09T11:18:21+0300 lvl=info msg="started tunnel" obj=tunnels name=command_line addr=http://localhost:5173 url=https://giddy-matchbook-prognosis.ngrok-free.dev
+t=2026-10-09T11:18:22+0300 lvl=info msg=start pg=/api/tunnels id=fcd8d32d126d9aec
+t=2026-10-09T11:18:22+0300 lvl=info msg=end pg=/api/tunnels id=fcd8d32d126d9aec status=200 dur=52µs
+t=2026-10-09T11:18:59+0300 lvl=info msg="join connections" obj=join id=596ba77eaa5a l=[::1]:5173 r=196.188.179.241:2414
+t=2026-10-09T11:19:00+0300 lvl=info msg="INFO received stop request obj=app stopReq=\"{err:<nil> restart:false}\""
+t=2026-10-09T11:19:00+0300 lvl=info msg="session closing" obj=tunnels.session err=<nil>
+t=2026-10-09T11:19:00+0300 lvl=info msg="accept failed" obj=tunnels.session obj=csess id=9814f703480e err="reconnecting session closed"
+t=2026-10-09T11:19:37+0300 lvl=info msg="no configuration paths supplied"
+t=2026-10-09T11:19:37+0300 lvl=info msg="using configuration at default config path" path="/Users/mac/Library/Application Support/ngrok/ngrok.yml"
+t=2026-10-09T11:19:37+0300 lvl=info msg="open config file" path="/Users/mac/Library/Application Support/ngrok/ngrok.yml" err=<nil>
+t=2026-10-09T11:19:37+0300 lvl=info msg="FIPS 140 mode" enabled=false
+t=2026-10-09T11:19:37+0300 lvl=info msg="starting web service" obj=web addr=127.0.0.1:4040 allow_hosts=[]
+t=2026-10-09T11:19:38+0300 lvl=info msg=start pg=/api/tunnels id=b1d03b78b5b22de9
+t=2026-10-09T11:19:38+0300 lvl=info msg=end pg=/api/tunnels id=b1d03b78b5b22de9 status=200 dur=187.042µs
+t=2026-10-09T11:19:38+0300 lvl=info msg="client session established" obj=tunnels.session
+t=2026-10-09T11:19:38+0300 lvl=info msg="tunnel session started" obj=tunnels.session
+t=2026-10-09T11:19:39+0300 lvl=info msg="started tunnel" obj=tunnels name=command_line addr=http://localhost:5173 url=https://giddy-matchbook-prognosis.ngrok-free.dev
+t=2026-10-09T11:19:39+0300 lvl=info msg=start pg=/api/tunnels id=d3f7c2b3e35c034d
+t=2026-10-09T11:19:39+0300 lvl=info msg=end pg=/api/tunnels id=d3f7c2b3e35c034d status=200 dur=51.834µs
+t=2026-10-09T11:20:03+0300 lvl=info msg="join connections" obj=join id=2fb84361fab6 l=[::1]:5173 r=196.188.179.241:4411
+t=2026-10-09T11:20:15+0300 lvl=info msg="join connections" obj=join id=b4372216bcad l=[::1]:5173 r=196.188.179.241:7994
+t=2026-10-09T11:20:37+0300 lvl=info msg="join connections" obj=join id=5786475aef14 l=[::1]:5173 r=196.188.179.241:7767
+t=2026-10-09T11:20:44+0300 lvl=info msg="INFO received stop request obj=app stopReq=\"{err:<nil> restart:false}\""
+t=2026-10-09T11:20:44+0300 lvl=info msg="session closing" obj=tunnels.session err=<nil>
+t=2026-10-09T11:20:44+0300 lvl=info msg="accept failed" obj=tunnels.session obj=csess id=e19a86049f56 err="reconnecting session closed"
+t=2026-10-09T11:22:08+0300 lvl=info msg="no configuration paths supplied"
+t=2026-10-09T11:22:08+0300 lvl=info msg="using configuration at default config path" path="/Users/mac/Library/Application Support/ngrok/ngrok.yml"
+t=2026-10-09T11:22:08+0300 lvl=info msg="open config file" path="/Users/mac/Library/Application Support/ngrok/ngrok.yml" err=<nil>
+t=2026-10-09T11:22:08+0300 lvl=info msg="FIPS 140 mode" enabled=false
+t=2026-10-09T11:22:08+0300 lvl=info msg="starting web service" obj=web addr=127.0.0.1:4040 allow_hosts=[]
+t=2026-10-09T11:22:09+0300 lvl=info msg=start pg=/api/tunnels id=b0d0eb6644f78904
+t=2026-10-09T11:22:09+0300 lvl=info msg=end pg=/api/tunnels id=b0d0eb6644f78904 status=200 dur=139.708µs
+t=2026-10-09T11:22:09+0300 lvl=info msg="client session established" obj=tunnels.session
+t=2026-10-09T11:22:09+0300 lvl=info msg="tunnel session started" obj=tunnels.session
+t=2026-10-09T11:22:10+0300 lvl=info msg="started tunnel" obj=tunnels name=command_line addr=http://localhost:5173 url=https://giddy-matchbook-prognosis.ngrok-free.dev
+t=2026-10-09T11:22:10+0300 lvl=info msg=start pg=/api/tunnels id=6e4d44fc3f5d1283
+t=2026-10-09T11:22:10+0300 lvl=info msg=end pg=/api/tunnels id=6e4d44fc3f5d1283 status=200 dur=59.584µs
+t=2026-10-09T11:22:13+0300 lvl=warn msg="failed to check for update" obj=updater err="Post \"https://update.ngrok-agent.com/check\": context deadline exceeded"
+t=2026-10-09T11:22:33+0300 lvl=info msg="INFO received stop request obj=app stopReq=\"{err:<nil> restart:false}\""
+t=2026-10-09T11:22:33+0300 lvl=info msg="session closing" obj=tunnels.session err=<nil>
+t=2026-10-09T11:22:33+0300 lvl=info msg="accept failed" obj=tunnels.session obj=csess id=5f88ba23f4e5 err="reconnecting session closed"
+t=2026-10-09T11:23:23+0300 lvl=info msg="no configuration paths supplied"
+t=2026-10-09T11:23:23+0300 lvl=info msg="using configuration at default config path" path="/Users/mac/Library/Application Support/ngrok/ngrok.yml"
+t=2026-10-09T11:23:23+0300 lvl=info msg="open config file" path="/Users/mac/Library/Application Support/ngrok/ngrok.yml" err=<nil>
+t=2026-10-09T11:23:23+0300 lvl=info msg="FIPS 140 mode" enabled=false
+t=2026-10-09T11:23:23+0300 lvl=info msg="starting web service" obj=web addr=127.0.0.1:4040 allow_hosts=[]
+t=2026-10-09T11:23:24+0300 lvl=info msg="client session established" obj=tunnels.session
+t=2026-10-09T11:23:24+0300 lvl=info msg="tunnel session started" obj=tunnels.session
+t=2026-10-09T11:23:24+0300 lvl=info msg=start pg=/api/tunnels id=23501ff8cf63f974
+t=2026-10-09T11:23:24+0300 lvl=info msg=end pg=/api/tunnels id=23501ff8cf63f974 status=200 dur=170.666µs
+t=2026-10-09T11:23:24+0300 lvl=info msg="started tunnel" obj=tunnels name=command_line addr=http://localhost:5173 url=https://giddy-matchbook-prognosis.ngrok-free.dev
+t=2026-10-09T11:23:25+0300 lvl=info msg=start pg=/api/tunnels id=fad005d7a34a5e3d
+t=2026-10-09T11:23:25+0300 lvl=info msg=end pg=/api/tunnels id=fad005d7a34a5e3d status=200 dur=59.5µs
+t=2026-10-09T11:23:58+0300 lvl=info msg="join connections" obj=join id=82012c84050c l=[::1]:5173 r=196.188.179.241:1024
+t=2026-10-09T11:23:58+0300 lvl=info msg="join connections" obj=join id=2e332c0eb93e l=[::1]:5173 r=196.188.179.241:1024
+t=2026-10-09T11:23:58+0300 lvl=info msg="join connections" obj=join id=38dcfc21f7d3 l=[::1]:5173 r=196.188.179.241:1024
+t=2026-10-09T11:23:59+0300 lvl=info msg="join connections" obj=join id=110435c18df2 l=[::1]:5173 r=196.188.179.241:1024
+t=2026-10-09T11:23:59+0300 lvl=info msg="join connections" obj=join id=97f4b23ec66f l=[::1]:5173 r=196.188.179.241:1024
+t=2026-10-09T11:23:59+0300 lvl=info msg="join connections" obj=join id=fa7741591b0a l=[::1]:5173 r=196.188.179.241:1024
+t=2026-10-09T11:23:59+0300 lvl=info msg="join connections" obj=join id=460cbcb3c819 l=[::1]:5173 r=196.188.179.241:1024
+t=2026-10-09T11:24:00+0300 lvl=info msg="join connections" obj=join id=22fde173094f l=[::1]:5173 r=196.188.179.241:10277
+t=2026-10-09T11:32:40+0300 lvl=info msg=start pg=/api/tunnels id=a36686e1aadd7911
+t=2026-10-09T11:32:40+0300 lvl=info msg=end pg=/api/tunnels id=a36686e1aadd7911 status=200 dur=86.333µs
+t=2026-10-09T11:44:55+0300 lvl=info msg="Got quit command" obj=consoleui
+t=2026-10-09T11:44:55+0300 lvl=info msg="INFO received stop request obj=app stopReq=\"{err:<nil> restart:false}\""
+t=2026-10-09T11:44:55+0300 lvl=info msg="session closing" obj=tunnels.session err=<nil>
+t=2026-10-09T11:44:58+0300 lvl=info msg="no configuration paths supplied"
+t=2026-10-09T11:44:58+0300 lvl=info msg="using configuration at default config path" path="/Users/mac/Library/Application Support/ngrok/ngrok.yml"
+t=2026-10-09T11:44:58+0300 lvl=info msg="open config file" path="/Users/mac/Library/Application Support/ngrok/ngrok.yml" err=<nil>
+t=2026-10-09T11:44:58+0300 lvl=info msg="FIPS 140 mode" enabled=false
+t=2026-10-09T11:44:58+0300 lvl=info msg="starting web service" obj=web addr=127.0.0.1:4040 allow_hosts=[]
+t=2026-10-09T11:44:59+0300 lvl=info msg=start pg=/api/tunnels id=f604883e9ca1c0d0
+t=2026-10-09T11:44:59+0300 lvl=info msg=end pg=/api/tunnels id=f604883e9ca1c0d0 status=200 dur=223.167µs
+t=2026-10-09T11:44:59+0300 lvl=info msg="client session established" obj=tunnels.session
+t=2026-10-09T11:44:59+0300 lvl=info msg="tunnel session started" obj=tunnels.session
+t=2026-10-09T11:44:59+0300 lvl=info msg="started tunnel" obj=tunnels name=command_line addr=http://localhost:5173 url=https://giddy-matchbook-prognosis.ngrok-free.dev
+t=2026-10-09T11:45:00+0300 lvl=info msg=start pg=/api/tunnels id=3db7d25acf04437a
+t=2026-10-09T11:45:00+0300 lvl=info msg=end pg=/api/tunnels id=3db7d25acf04437a status=200 dur=68.75µs
+t=2026-10-09T11:48:10+0300 lvl=info msg=start pg=/api/tunnels id=77a8a69cf8711929
+t=2026-10-09T11:48:10+0300 lvl=info msg=end pg=/api/tunnels id=77a8a69cf8711929 status=200 dur=348.625µs
+t=2026-10-09T11:49:44+0300 lvl=eror msg="heartbeat timeout, terminating session" obj=tunnels.session obj=csess id=971f1c21d2dd clientid=709a1fa48d46c573be17d00a363bacb2
+t=2026-10-09T11:49:44+0300 lvl=eror msg="session closed, starting reconnect loop" obj=tunnels.session obj=csess id=845a2838859f err="session closed"
+t=2026-10-09T11:49:52+0300 lvl=info msg="client session established" obj=tunnels.session
+t=2026-10-09T11:49:52+0300 lvl=info msg="tunnel session started" obj=tunnels.session
+t=2026-10-09T11:52:36+0300 lvl=eror msg="heartbeat timeout, terminating session" obj=tunnels.session obj=csess id=d15717e93fc6 clientid=709a1fa48d46c573be17d00a363bacb2
+t=2026-10-09T11:52:36+0300 lvl=eror msg="session closed, starting reconnect loop" obj=tunnels.session obj=csess id=845a2838859f err="session closed"
+t=2026-10-09T11:52:36+0300 lvl=eror msg="failed to reconnect session" obj=tunnels.session err="failed to dial ngrok server with address \"connect.ngrok-agent.com:443\": dial tcp: lookup connect.ngrok-agent.com: no such host"
+t=2026-10-09T11:52:47+0300 lvl=eror msg="failed to reconnect session" obj=tunnels.session err="failed to dial ngrok server with address \"connect.ngrok-agent.com:443\": dial tcp: lookup connect.ngrok-agent.com: i/o timeout"
+t=2026-10-09T11:52:55+0300 lvl=info msg="client session established" obj=tunnels.session
+t=2026-10-09T11:52:55+0300 lvl=info msg="tunnel session started" obj=tunnels.session
+t=2026-10-09T11:53:18+0300 lvl=eror msg="heartbeat timeout, terminating session" obj=tunnels.session obj=csess id=32504f329ee3 clientid=709a1fa48d46c573be17d00a363bacb2
+t=2026-10-09T11:53:18+0300 lvl=eror msg="session closed, starting reconnect loop" obj=tunnels.session obj=csess id=845a2838859f err="session closed"
+t=2026-10-09T11:53:21+0300 lvl=info msg="client session established" obj=tunnels.session
+t=2026-10-09T11:53:21+0300 lvl=info msg="tunnel session started" obj=tunnels.session
+t=2026-10-09T11:56:18+0300 lvl=info msg=start pg=/api/tunnels id=f0a5fa674e389c36
+t=2026-10-09T11:56:18+0300 lvl=info msg=end pg=/api/tunnels id=f0a5fa674e389c36 status=200 dur=333.5µs
+t=2026-10-09T11:58:23+0300 lvl=info msg="Got quit command" obj=consoleui
+t=2026-10-09T11:58:23+0300 lvl=info msg="INFO received stop request obj=app stopReq=\"{err:<nil> restart:false}\""
+t=2026-10-09T11:58:23+0300 lvl=info msg="session closing" obj=tunnels.session err=<nil>
+t=2026-10-09T11:58:23+0300 lvl=info msg="accept failed" obj=tunnels.session err="reconnecting session closed" obj=csess id=845a2838859f
+t=2026-10-09T11:58:25+0300 lvl=info msg="no configuration paths supplied"
+t=2026-10-09T11:58:25+0300 lvl=info msg="using configuration at default config path" path="/Users/mac/Library/Application Support/ngrok/ngrok.yml"
+t=2026-10-09T11:58:25+0300 lvl=info msg="open config file" path="/Users/mac/Library/Application Support/ngrok/ngrok.yml" err=<nil>
+t=2026-10-09T11:58:25+0300 lvl=info msg="FIPS 140 mode" enabled=false
+t=2026-10-09T11:58:25+0300 lvl=info msg="starting web service" obj=web addr=127.0.0.1:4040 allow_hosts=[]
+t=2026-10-09T11:58:26+0300 lvl=info msg=start pg=/api/tunnels id=ddd03ff762ce279f
+t=2026-10-09T11:58:26+0300 lvl=info msg=end pg=/api/tunnels id=ddd03ff762ce279f status=200 dur=144.25µs
+t=2026-10-09T11:58:26+0300 lvl=info msg="client session established" obj=tunnels.session
+t=2026-10-09T11:58:26+0300 lvl=info msg="tunnel session started" obj=tunnels.session
+t=2026-10-09T11:58:27+0300 lvl=info msg="started tunnel" obj=tunnels name=command_line addr=http://localhost:5173 url=https://giddy-matchbook-prognosis.ngrok-free.dev
+t=2026-10-09T11:58:27+0300 lvl=info msg=start pg=/api/tunnels id=a1dda89484adde9a
+t=2026-10-09T11:58:27+0300 lvl=info msg=end pg=/api/tunnels id=a1dda89484adde9a status=200 dur=78µs
+t=2026-10-09T11:58:30+0300 lvl=warn msg="failed to check for update" obj=updater err="Post \"https://update.ngrok-agent.com/check\": context deadline exceeded"
+t=2026-10-09T11:59:16+0300 lvl=info msg="join connections" obj=join id=619aca243b65 l=[::1]:5173 r=149.154.161.198:44576
+t=2026-10-09T11:59:49+0300 lvl=info msg="Got quit command" obj=consoleui
+t=2026-10-09T11:59:49+0300 lvl=info msg="INFO received stop request obj=app stopReq=\"{err:<nil> restart:false}\""
+t=2026-10-09T11:59:49+0300 lvl=info msg="session closing" obj=tunnels.session err=<nil>
+t=2026-10-09T11:59:49+0300 lvl=info msg="accept failed" obj=tunnels.session obj=csess id=1f066b412d10 err="reconnecting session closed"
+t=2026-10-09T11:59:51+0300 lvl=info msg="no configuration paths supplied"
+t=2026-10-09T11:59:51+0300 lvl=info msg="using configuration at default config path" path="/Users/mac/Library/Application Support/ngrok/ngrok.yml"
+t=2026-10-09T11:59:51+0300 lvl=info msg="open config file" path="/Users/mac/Library/Application Support/ngrok/ngrok.yml" err=<nil>
+t=2026-10-09T11:59:51+0300 lvl=info msg="FIPS 140 mode" enabled=false
+t=2026-10-09T11:59:51+0300 lvl=info msg="starting web service" obj=web addr=127.0.0.1:4040 allow_hosts=[]
+t=2026-10-09T11:59:52+0300 lvl=info msg="client session established" obj=tunnels.session
+t=2026-10-09T11:59:52+0300 lvl=info msg="tunnel session started" obj=tunnels.session
+t=2026-10-09T11:59:52+0300 lvl=info msg=start pg=/api/tunnels id=37e2140a5279d932
+t=2026-10-09T11:59:52+0300 lvl=info msg=end pg=/api/tunnels id=37e2140a5279d932 status=200 dur=137.208µs
+t=2026-10-09T11:59:52+0300 lvl=info msg="started tunnel" obj=tunnels name=command_line addr=http://localhost:5173 url=https://giddy-matchbook-prognosis.ngrok-free.dev
+t=2026-10-09T11:59:53+0300 lvl=info msg=start pg=/api/tunnels id=00f5bbdb5e5f2378
+t=2026-10-09T11:59:53+0300 lvl=info msg=end pg=/api/tunnels id=00f5bbdb5e5f2378 status=200 dur=49.166µs
+t=2026-10-09T11:59:56+0300 lvl=warn msg="failed to check for update" obj=updater err="Post \"https://update.ngrok-agent.com/check\": context deadline exceeded"
+t=2026-10-09T12:00:19+0300 lvl=info msg="join connections" obj=join id=879f3aa25776 l=[::1]:5173 r=196.188.179.241:10245
+t=2026-10-09T12:00:20+0300 lvl=info msg="join connections" obj=join id=f7dabcdd7f2a l=[::1]:5173 r=196.188.179.241:10245
+t=2026-10-09T12:00:20+0300 lvl=info msg="join connections" obj=join id=a268934e0049 l=[::1]:5173 r=196.188.179.241:10245
+t=2026-10-09T12:00:20+0300 lvl=info msg="join connections" obj=join id=79a00d51232c l=[::1]:5173 r=196.188.179.241:10245
+t=2026-10-09T12:00:22+0300 lvl=info msg="join connections" obj=join id=4363872a50ee l=[::1]:5173 r=196.188.179.241:4067
+t=2026-10-09T12:10:40+0300 lvl=info msg="Got quit command" obj=consoleui
+t=2026-10-09T12:10:40+0300 lvl=info msg="INFO received stop request obj=app stopReq=\"{err:<nil> restart:false}\""
+t=2026-10-09T12:10:40+0300 lvl=info msg="session closing" obj=tunnels.session err=<nil>
+t=2026-10-09T12:10:40+0300 lvl=info msg="accept failed" obj=tunnels.session obj=csess id=e367a137e690 err="reconnecting session closed"
