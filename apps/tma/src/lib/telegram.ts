@@ -16,6 +16,13 @@ export type TgWebApp = {
   themeParams: Record<string, string>;
   ready: () => void;
   expand: () => void;
+  setHeaderColor?: (color: string) => void;
+  setBackgroundColor?: (color: string) => void;
+  Haptics?: {
+    impactOccurred?: (style: "light" | "medium" | "heavy" | "rigid" | "soft") => void;
+    notificationOccurred?: (type: "error" | "success" | "warning") => void;
+    selectionChanged?: () => void;
+  };
 };
 
 declare global {

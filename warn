@@ -162,3 +162,315 @@ t=2026-10-09T12:10:40+0300 lvl=info msg="Got quit command" obj=consoleui
 t=2026-10-09T12:10:40+0300 lvl=info msg="INFO received stop request obj=app stopReq=\"{err:<nil> restart:false}\""
 t=2026-10-09T12:10:40+0300 lvl=info msg="session closing" obj=tunnels.session err=<nil>
 t=2026-10-09T12:10:40+0300 lvl=info msg="accept failed" obj=tunnels.session obj=csess id=e367a137e690 err="reconnecting session closed"
+t=2026-10-11T12:33:29+0300 lvl=info msg="no configuration paths supplied"
+t=2026-10-11T12:33:29+0300 lvl=info msg="using configuration at default config path" path="/Users/mac/Library/Application Support/ngrok/ngrok.yml"
+t=2026-10-11T12:33:29+0300 lvl=info msg="open config file" path="/Users/mac/Library/Application Support/ngrok/ngrok.yml" err=<nil>
+t=2026-10-11T12:33:29+0300 lvl=info msg="FIPS 140 mode" enabled=false
+t=2026-10-11T12:33:29+0300 lvl=info msg="starting web service" obj=web addr=127.0.0.1:4040 allow_hosts=[]
+t=2026-10-11T12:33:30+0300 lvl=info msg=start pg=/api/tunnels id=9f6742fd24048ef6
+t=2026-10-11T12:33:30+0300 lvl=info msg=end pg=/api/tunnels id=9f6742fd24048ef6 status=200 dur=150.666µs
+t=2026-10-11T12:33:31+0300 lvl=info msg="client session established" obj=tunnels.session
+t=2026-10-11T12:33:31+0300 lvl=info msg="tunnel session started" obj=tunnels.session
+t=2026-10-11T12:33:31+0300 lvl=info msg="started tunnel" obj=tunnels name=command_line addr=http://localhost:5173 url=https://giddy-matchbook-prognosis.ngrok-free.dev
+t=2026-10-11T12:33:31+0300 lvl=info msg=start pg=/api/tunnels id=75cc706197d6bfb7
+t=2026-10-11T12:33:31+0300 lvl=info msg=end pg=/api/tunnels id=75cc706197d6bfb7 status=200 dur=61.541µs
+t=2026-10-11T12:34:06+0300 lvl=info msg="join connections" obj=join id=ce08b66fa22f l=[::1]:5173 r=102.208.96.5:24516
+t=2026-10-11T12:34:06+0300 lvl=info msg="join connections" obj=join id=0491502c7791 l=[::1]:5173 r=102.208.96.5:24516
+t=2026-10-11T12:34:06+0300 lvl=info msg="join connections" obj=join id=7460f9122c1b l=[::1]:5173 r=102.208.96.5:24516
+t=2026-10-11T12:34:07+0300 lvl=info msg="join connections" obj=join id=3ecb7a39322c l=[::1]:5173 r=102.208.96.5:24516
+t=2026-10-11T12:34:10+0300 lvl=info msg="join connections" obj=join id=c07ec64d0524 l=[::1]:5173 r=102.208.96.5:24517
+t=2026-10-11T12:48:52+0300 lvl=eror msg="heartbeat timeout, terminating session" obj=tunnels.session obj=csess id=eac1efe1b9f4 clientid=4c722540b94a551f3e39224cb7f43e11
+t=2026-10-11T12:48:52+0300 lvl=eror msg="session closed, starting reconnect loop" obj=tunnels.session id=5e53bb2daa8a err="session closed" obj=csess
+t=2026-10-11T12:48:54+0300 lvl=info msg="client session established" obj=tunnels.session
+t=2026-10-11T12:48:54+0300 lvl=info msg="tunnel session started" obj=tunnels.session
+t=2026-10-11T12:49:46+0300 lvl=eror msg="session closed, starting reconnect loop" obj=tunnels.session obj=csess id=5e53bb2daa8a err="read EOF from remote peer"
+t=2026-10-11T12:49:48+0300 lvl=info msg="client session established" obj=tunnels.session
+t=2026-10-11T12:49:48+0300 lvl=info msg="tunnel session started" obj=tunnels.session
+t=2026-10-11T12:50:38+0300 lvl=eror msg="session closed, starting reconnect loop" obj=tunnels.session id=5e53bb2daa8a err="read EOF from remote peer" obj=csess
+t=2026-10-11T12:50:40+0300 lvl=info msg="client session established" obj=tunnels.session
+t=2026-10-11T12:50:40+0300 lvl=info msg="tunnel session started" obj=tunnels.session
+t=2026-10-11T12:51:30+0300 lvl=eror msg="session closed, starting reconnect loop" obj=tunnels.session obj=csess id=5e53bb2daa8a err="read EOF from remote peer"
+t=2026-10-11T12:51:31+0300 lvl=info msg="client session established" obj=tunnels.session
+t=2026-10-11T12:51:31+0300 lvl=info msg="tunnel session started" obj=tunnels.session
+t=2026-10-11T12:51:34+0300 lvl=eror msg="heartbeat timeout, terminating session" obj=tunnels.session obj=csess id=9ccdea8063d6 clientid=4c722540b94a551f3e39224cb7f43e11
+t=2026-10-11T12:52:26+0300 lvl=eror msg="session closed, starting reconnect loop" obj=tunnels.session obj=csess id=5e53bb2daa8a err="read EOF from remote peer"
+t=2026-10-11T12:52:27+0300 lvl=eror msg="heartbeat timeout, terminating session" obj=tunnels.session clientid=4c722540b94a551f3e39224cb7f43e11 obj=csess id=54068c23f3f1
+t=2026-10-11T12:52:27+0300 lvl=info msg="client session established" obj=tunnels.session
+t=2026-10-11T12:52:27+0300 lvl=info msg="tunnel session started" obj=tunnels.session
+t=2026-10-11T12:52:38+0300 lvl=eror msg="heartbeat timeout, terminating session" obj=tunnels.session obj=csess id=b395ebe9f034 clientid=4c722540b94a551f3e39224cb7f43e11
+t=2026-10-11T12:52:44+0300 lvl=eror msg="heartbeat timeout, terminating session" obj=tunnels.session obj=csess id=3a5e1774533b clientid=4c722540b94a551f3e39224cb7f43e11
+t=2026-10-11T13:06:47+0300 lvl=eror msg="session closed, starting reconnect loop" obj=tunnels.session id=5e53bb2daa8a err="read tcp 192.168.221.108:60302->52.220.69.60:443: read: connection reset by peer" obj=csess
+t=2026-10-11T13:06:48+0300 lvl=info msg="client session established" obj=tunnels.session
+t=2026-10-11T13:06:48+0300 lvl=info msg="tunnel session started" obj=tunnels.session
+t=2026-10-11T13:07:02+0300 lvl=eror msg="heartbeat timeout, terminating session" obj=tunnels.session obj=csess id=cb2204ca3496 clientid=4c722540b94a551f3e39224cb7f43e11
+t=2026-10-11T13:29:10+0300 lvl=eror msg="session closed, starting reconnect loop" obj=tunnels.session err="read tcp 192.168.221.108:54572->13.228.59.63:443: read: connection reset by peer" obj=csess id=5e53bb2daa8a
+t=2026-10-11T13:29:11+0300 lvl=info msg="client session established" obj=tunnels.session
+t=2026-10-11T13:29:11+0300 lvl=info msg="tunnel session started" obj=tunnels.session
+t=2026-10-11T13:29:17+0300 lvl=eror msg="heartbeat timeout, terminating session" obj=tunnels.session id=a933fc28516b clientid=4c722540b94a551f3e39224cb7f43e11 obj=csess
+t=2026-10-11T13:31:16+0300 lvl=eror msg="heartbeat timeout, terminating session" obj=tunnels.session obj=csess id=a8368b14ef2e clientid=4c722540b94a551f3e39224cb7f43e11
+t=2026-10-11T13:31:16+0300 lvl=eror msg="session closed, starting reconnect loop" obj=tunnels.session obj=csess id=5e53bb2daa8a err="session closed"
+t=2026-10-11T13:31:18+0300 lvl=info msg="client session established" obj=tunnels.session
+t=2026-10-11T13:31:18+0300 lvl=info msg="tunnel session started" obj=tunnels.session
+t=2026-10-11T13:32:10+0300 lvl=eror msg="session closed, starting reconnect loop" obj=tunnels.session id=5e53bb2daa8a err="read EOF from remote peer" obj=csess
+t=2026-10-11T13:32:59+0300 lvl=info msg="client session established" obj=tunnels.session
+t=2026-10-11T13:32:59+0300 lvl=info msg="tunnel session started" obj=tunnels.session
+t=2026-10-11T13:34:42+0300 lvl=eror msg="heartbeat timeout, terminating session" obj=tunnels.session obj=csess id=6f858ba45aa2 clientid=4c722540b94a551f3e39224cb7f43e11
+t=2026-10-11T13:34:52+0300 lvl=eror msg="heartbeat timeout, terminating session" obj=tunnels.session obj=csess id=864008ad6e04 clientid=4c722540b94a551f3e39224cb7f43e11
+t=2026-10-11T13:34:52+0300 lvl=eror msg="session closed, starting reconnect loop" obj=tunnels.session obj=csess id=5e53bb2daa8a err="session closed"
+t=2026-10-11T13:34:54+0300 lvl=info msg="client session established" obj=tunnels.session
+t=2026-10-11T13:34:54+0300 lvl=info msg="tunnel session started" obj=tunnels.session
+t=2026-10-11T13:50:44+0300 lvl=eror msg="session closed, starting reconnect loop" obj=tunnels.session id=5e53bb2daa8a err="read tcp 192.168.221.108:51628->13.228.59.63:443: read: connection reset by peer" obj=csess
+t=2026-10-11T13:50:48+0300 lvl=info msg="client session established" obj=tunnels.session
+t=2026-10-11T13:50:48+0300 lvl=info msg="tunnel session started" obj=tunnels.session
+t=2026-10-11T13:50:58+0300 lvl=eror msg="heartbeat timeout, terminating session" obj=tunnels.session obj=csess id=af0dcce4fcc8 clientid=4c722540b94a551f3e39224cb7f43e11
+t=2026-10-11T14:06:33+0300 lvl=eror msg="session closed, starting reconnect loop" obj=tunnels.session id=5e53bb2daa8a err="read tcp 192.168.221.108:52925->18.141.102.200:443: read: connection reset by peer" obj=csess
+t=2026-10-11T14:06:35+0300 lvl=info msg="client session established" obj=tunnels.session
+t=2026-10-11T14:06:35+0300 lvl=info msg="tunnel session started" obj=tunnels.session
+t=2026-10-11T14:06:49+0300 lvl=eror msg="heartbeat timeout, terminating session" obj=tunnels.session obj=csess id=edd983338e0f clientid=4c722540b94a551f3e39224cb7f43e11
+t=2026-10-11T14:22:24+0300 lvl=eror msg="session closed, starting reconnect loop" obj=tunnels.session id=5e53bb2daa8a err="read tcp 192.168.221.108:54217->13.251.162.108:443: read: connection reset by peer" obj=csess
+t=2026-10-11T14:22:26+0300 lvl=info msg="client session established" obj=tunnels.session
+t=2026-10-11T14:22:26+0300 lvl=info msg="tunnel session started" obj=tunnels.session
+t=2026-10-11T14:22:39+0300 lvl=eror msg="heartbeat timeout, terminating session" obj=tunnels.session obj=csess id=309681bec080 clientid=4c722540b94a551f3e39224cb7f43e11
+t=2026-10-11T14:38:26+0300 lvl=eror msg="session closed, starting reconnect loop" obj=tunnels.session obj=csess id=5e53bb2daa8a err="read tcp 192.168.221.108:55527->13.228.59.63:443: read: connection reset by peer"
+t=2026-10-11T14:38:28+0300 lvl=info msg="client session established" obj=tunnels.session
+t=2026-10-11T14:38:28+0300 lvl=info msg="tunnel session started" obj=tunnels.session
+t=2026-10-11T14:38:41+0300 lvl=eror msg="heartbeat timeout, terminating session" obj=tunnels.session id=44674718a9fe clientid=4c722540b94a551f3e39224cb7f43e11 obj=csess
+t=2026-10-11T14:54:27+0300 lvl=eror msg="session closed, starting reconnect loop" obj=tunnels.session err="read tcp 192.168.221.108:57055->52.220.126.110:443: read: connection reset by peer" obj=csess id=5e53bb2daa8a
+t=2026-10-11T14:54:28+0300 lvl=info msg="client session established" obj=tunnels.session
+t=2026-10-11T14:54:28+0300 lvl=info msg="tunnel session started" obj=tunnels.session
+t=2026-10-11T14:54:42+0300 lvl=eror msg="heartbeat timeout, terminating session" obj=tunnels.session id=f837a896a0b6 clientid=4c722540b94a551f3e39224cb7f43e11 obj=csess
+t=2026-10-11T15:10:23+0300 lvl=eror msg="session closed, starting reconnect loop" obj=tunnels.session obj=csess id=5e53bb2daa8a err="read tcp 192.168.221.108:58559->13.228.59.63:443: read: connection reset by peer"
+t=2026-10-11T15:10:25+0300 lvl=info msg="client session established" obj=tunnels.session
+t=2026-10-11T15:10:25+0300 lvl=info msg="tunnel session started" obj=tunnels.session
+t=2026-10-11T15:10:38+0300 lvl=eror msg="heartbeat timeout, terminating session" obj=tunnels.session obj=csess id=533863ce1393 clientid=4c722540b94a551f3e39224cb7f43e11
+t=2026-10-11T15:15:33+0300 lvl=eror msg="heartbeat timeout, terminating session" obj=tunnels.session clientid=4c722540b94a551f3e39224cb7f43e11 obj=csess id=3a6e89d08447
+t=2026-10-11T15:15:33+0300 lvl=eror msg="session closed, starting reconnect loop" obj=tunnels.session obj=csess id=5e53bb2daa8a err="session closed"
+t=2026-10-11T15:15:35+0300 lvl=info msg="client session established" obj=tunnels.session
+t=2026-10-11T15:15:35+0300 lvl=info msg="tunnel session started" obj=tunnels.session
+t=2026-10-11T15:20:25+0300 lvl=eror msg="session closed, starting reconnect loop" obj=tunnels.session id=5e53bb2daa8a err="read EOF from remote peer" obj=csess
+t=2026-10-11T15:20:26+0300 lvl=info msg="client session established" obj=tunnels.session
+t=2026-10-11T15:20:26+0300 lvl=info msg="tunnel session started" obj=tunnels.session
+t=2026-10-11T15:20:34+0300 lvl=eror msg="heartbeat timeout, terminating session" obj=tunnels.session obj=csess id=846f3c5e60a9 clientid=4c722540b94a551f3e39224cb7f43e11
+t=2026-10-11T15:35:49+0300 lvl=eror msg="session closed, starting reconnect loop" obj=tunnels.session err="read tcp 192.168.221.108:62082->13.228.59.63:443: read: connection reset by peer" obj=csess id=5e53bb2daa8a
+t=2026-10-11T15:35:56+0300 lvl=info msg="client session established" obj=tunnels.session
+t=2026-10-11T15:35:56+0300 lvl=info msg="tunnel session started" obj=tunnels.session
+t=2026-10-11T15:36:04+0300 lvl=eror msg="heartbeat timeout, terminating session" obj=tunnels.session obj=csess id=e82f8cd0677a clientid=4c722540b94a551f3e39224cb7f43e11
+t=2026-10-11T15:37:35+0300 lvl=eror msg="heartbeat timeout, terminating session" obj=tunnels.session obj=csess id=295a160c4eaf clientid=4c722540b94a551f3e39224cb7f43e11
+t=2026-10-11T15:37:35+0300 lvl=eror msg="session closed, starting reconnect loop" obj=tunnels.session obj=csess id=5e53bb2daa8a err="session closed"
+t=2026-10-11T15:37:35+0300 lvl=eror msg="failed to reconnect session" obj=tunnels.session err="failed to dial ngrok server with address \"connect.ngrok-agent.com:443\": dial tcp: lookup connect.ngrok-agent.com: no such host"
+t=2026-10-11T15:37:36+0300 lvl=eror msg="failed to reconnect session" obj=tunnels.session err="failed to dial ngrok server with address \"connect.ngrok-agent.com:443\": dial tcp: lookup connect.ngrok-agent.com: no such host"
+t=2026-10-11T15:37:37+0300 lvl=eror msg="failed to reconnect session" obj=tunnels.session err="failed to dial ngrok server with address \"connect.ngrok-agent.com:443\": dial tcp: lookup connect.ngrok-agent.com: no such host"
+t=2026-10-11T15:37:39+0300 lvl=eror msg="failed to reconnect session" obj=tunnels.session err="failed to dial ngrok server with address \"connect.ngrok-agent.com:443\": dial tcp: lookup connect.ngrok-agent.com: no such host"
+t=2026-10-11T15:37:43+0300 lvl=eror msg="failed to reconnect session" obj=tunnels.session err="failed to dial ngrok server with address \"connect.ngrok-agent.com:443\": dial tcp: lookup connect.ngrok-agent.com: no such host"
+t=2026-10-11T15:37:51+0300 lvl=eror msg="failed to reconnect session" obj=tunnels.session err="failed to dial ngrok server with address \"connect.ngrok-agent.com:443\": dial tcp: lookup connect.ngrok-agent.com: no such host"
+t=2026-10-11T15:53:36+0300 lvl=eror msg="failed to reconnect session" obj=tunnels.session err="failed to dial ngrok server with address \"connect.ngrok-agent.com:443\": dial tcp: lookup connect.ngrok-agent.com: no such host"
+t=2026-10-11T15:54:06+0300 lvl=eror msg="failed to reconnect session" obj=tunnels.session err="failed to dial ngrok server with address \"connect.ngrok-agent.com:443\": dial tcp: lookup connect.ngrok-agent.com: no such host"
+t=2026-10-11T16:10:19+0300 lvl=eror msg="failed to reconnect session" obj=tunnels.session err="failed to dial ngrok server with address \"connect.ngrok-agent.com:443\": dial tcp: lookup connect.ngrok-agent.com: no such host"
+t=2026-10-11T16:16:26+0300 lvl=info msg="client session established" obj=tunnels.session
+t=2026-10-11T16:16:26+0300 lvl=info msg="tunnel session started" obj=tunnels.session
+t=2026-10-11T16:27:41+0300 lvl=eror msg="heartbeat timeout, terminating session" obj=tunnels.session obj=csess id=484a14431f95 clientid=4c722540b94a551f3e39224cb7f43e11
+t=2026-10-11T16:27:41+0300 lvl=eror msg="session closed, starting reconnect loop" obj=tunnels.session obj=csess id=5e53bb2daa8a err="session closed"
+t=2026-10-11T16:27:41+0300 lvl=eror msg="failed to reconnect session" obj=tunnels.session err="failed to dial ngrok server with address \"connect.ngrok-agent.com:443\": dial tcp: lookup connect.ngrok-agent.com: no such host"
+t=2026-10-11T16:27:41+0300 lvl=eror msg="failed to reconnect session" obj=tunnels.session err="failed to dial ngrok server with address \"connect.ngrok-agent.com:443\": dial tcp: lookup connect.ngrok-agent.com: no such host"
+t=2026-10-11T16:27:42+0300 lvl=eror msg="failed to reconnect session" obj=tunnels.session err="failed to dial ngrok server with address \"connect.ngrok-agent.com:443\": dial tcp: lookup connect.ngrok-agent.com: no such host"
+t=2026-10-11T16:27:44+0300 lvl=eror msg="failed to reconnect session" obj=tunnels.session err="failed to dial ngrok server with address \"connect.ngrok-agent.com:443\": dial tcp: lookup connect.ngrok-agent.com: no such host"
+t=2026-10-11T16:27:48+0300 lvl=eror msg="failed to reconnect session" obj=tunnels.session err="failed to dial ngrok server with address \"connect.ngrok-agent.com:443\": dial tcp: lookup connect.ngrok-agent.com: no such host"
+t=2026-10-11T16:27:56+0300 lvl=eror msg="failed to reconnect session" obj=tunnels.session err="failed to dial ngrok server with address \"connect.ngrok-agent.com:443\": dial tcp: lookup connect.ngrok-agent.com: no such host"
+t=2026-10-11T16:34:37+0300 lvl=info msg="client session established" obj=tunnels.session
+t=2026-10-11T16:34:37+0300 lvl=info msg="tunnel session started" obj=tunnels.session
+t=2026-10-11T16:43:43+0300 lvl=eror msg="session closed, starting reconnect loop" obj=tunnels.session obj=csess id=5e53bb2daa8a err="read EOF from remote peer"
+t=2026-10-11T16:43:45+0300 lvl=info msg="client session established" obj=tunnels.session
+t=2026-10-11T16:43:45+0300 lvl=info msg="tunnel session started" obj=tunnels.session
+t=2026-10-11T16:44:08+0300 lvl=eror msg="heartbeat timeout, terminating session" obj=tunnels.session obj=csess id=b2b19fc21855 clientid=4c722540b94a551f3e39224cb7f43e11
+t=2026-10-11T16:59:07+0300 lvl=eror msg="heartbeat timeout, terminating session" obj=tunnels.session obj=csess id=86e7a2e81041 clientid=4c722540b94a551f3e39224cb7f43e11
+t=2026-10-11T16:59:07+0300 lvl=eror msg="session closed, starting reconnect loop" obj=tunnels.session obj=csess id=5e53bb2daa8a err="session closed"
+t=2026-10-11T16:59:09+0300 lvl=info msg="client session established" obj=tunnels.session
+t=2026-10-11T16:59:09+0300 lvl=info msg="tunnel session started" obj=tunnels.session
+t=2026-10-11T17:02:42+0300 lvl=info msg="Got quit command" obj=consoleui
+t=2026-10-11T17:02:42+0300 lvl=info msg="INFO received stop request obj=app stopReq=\"{err:<nil> restart:false}\""
+t=2026-10-11T17:02:42+0300 lvl=info msg="session closing" obj=tunnels.session err=<nil>
+t=2026-10-11T17:02:42+0300 lvl=info msg="accept failed" obj=tunnels.session obj=csess id=5e53bb2daa8a err="reconnecting session closed"
+t=2026-10-11T17:02:42+0300 lvl=info msg="no more state changes" obj=tunnels.session
+t=2026-10-11T17:08:09+0300 lvl=info msg="no configuration paths supplied"
+t=2026-10-11T17:08:09+0300 lvl=info msg="using configuration at default config path" path="/Users/mac/Library/Application Support/ngrok/ngrok.yml"
+t=2026-10-11T17:08:09+0300 lvl=info msg="open config file" path="/Users/mac/Library/Application Support/ngrok/ngrok.yml" err=<nil>
+t=2026-10-11T17:08:09+0300 lvl=info msg="FIPS 140 mode" enabled=false
+t=2026-10-11T17:08:09+0300 lvl=info msg="starting web service" obj=web addr=127.0.0.1:4040 allow_hosts=[]
+t=2026-10-11T17:08:10+0300 lvl=info msg=start pg=/api/tunnels id=b3cb2320eca6e50a
+t=2026-10-11T17:08:10+0300 lvl=info msg=end pg=/api/tunnels id=b3cb2320eca6e50a status=200 dur=147.833µs
+t=2026-10-11T17:08:10+0300 lvl=info msg="client session established" obj=tunnels.session
+t=2026-10-11T17:08:10+0300 lvl=info msg="tunnel session started" obj=tunnels.session
+t=2026-10-11T17:08:10+0300 lvl=info msg="started tunnel" obj=tunnels name=command_line addr=http://localhost:5173 url=https://giddy-matchbook-prognosis.ngrok-free.dev
+t=2026-10-11T17:08:11+0300 lvl=info msg=start pg=/api/tunnels id=a99cd22668e8cccb
+t=2026-10-11T17:08:11+0300 lvl=info msg=end pg=/api/tunnels id=a99cd22668e8cccb status=200 dur=59.125µs
+t=2026-10-11T17:21:37+0300 lvl=info msg="join connections" obj=join id=ead068459827 l=[::1]:5173 r=102.208.96.5:24522
+t=2026-10-11T17:21:38+0300 lvl=info msg="join connections" obj=join id=18b8c0b282a0 l=[::1]:5173 r=102.208.96.5:24522
+t=2026-10-11T17:21:38+0300 lvl=info msg="join connections" obj=join id=4f92ca65f2fe l=[::1]:5173 r=102.208.96.5:24522
+t=2026-10-11T17:21:43+0300 lvl=info msg="join connections" obj=join id=d5ab1075ead4 l=[::1]:5173 r=102.208.96.5:24522
+t=2026-10-11T17:21:43+0300 lvl=info msg="join connections" obj=join id=f9976864765c l=[::1]:5173 r=102.208.96.5:24522
+t=2026-10-11T17:21:43+0300 lvl=info msg="join connections" obj=join id=6ac6c90c6db7 l=[::1]:5173 r=102.208.96.5:24522
+t=2026-10-11T17:21:43+0300 lvl=info msg="join connections" obj=join id=6f8fd8487281 l=[::1]:5173 r=102.208.96.5:24522
+t=2026-10-11T17:21:43+0300 lvl=info msg="join connections" obj=join id=66d16cb034f8 l=[::1]:5173 r=102.208.96.5:24522
+t=2026-10-11T17:21:46+0300 lvl=info msg="join connections" obj=join id=bb7f4992926c l=[::1]:5173 r=102.208.96.5:24522
+t=2026-10-11T17:21:47+0300 lvl=info msg="join connections" obj=join id=d458bc59a90d l=[::1]:5173 r=102.208.96.5:24522
+t=2026-10-11T17:21:49+0300 lvl=info msg="join connections" obj=join id=b085c9ad0857 l=[::1]:5173 r=102.208.96.5:24522
+t=2026-10-11T17:21:49+0300 lvl=info msg="join connections" obj=join id=85fcd0ec4483 l=[::1]:5173 r=102.208.96.5:24522
+t=2026-10-11T17:21:49+0300 lvl=info msg="join connections" obj=join id=2764dab9d197 l=[::1]:5173 r=102.208.96.5:24513
+t=2026-10-11T17:21:52+0300 lvl=info msg="join connections" obj=join id=ed5baa3f0d57 l=[::1]:5173 r=102.208.96.5:24522
+t=2026-10-11T17:21:54+0300 lvl=info msg="join connections" obj=join id=33e7fd20bb40 l=[::1]:5173 r=102.208.96.5:24522
+t=2026-10-11T17:21:54+0300 lvl=info msg="join connections" obj=join id=cf2d9adeabe2 l=[::1]:5173 r=102.208.96.5:24522
+t=2026-10-11T17:21:54+0300 lvl=info msg="join connections" obj=join id=294e68cfc67d l=[::1]:5173 r=102.208.96.5:24522
+t=2026-10-11T17:21:55+0300 lvl=info msg="join connections" obj=join id=a5f8b4d72df0 l=[::1]:5173 r=102.208.96.5:24522
+t=2026-10-11T17:21:58+0300 lvl=info msg="join connections" obj=join id=7f5481488864 l=[::1]:5173 r=102.208.96.5:24522
+t=2026-10-11T17:21:58+0300 lvl=info msg="join connections" obj=join id=652ad00f2fde l=[::1]:5173 r=102.208.96.5:24522
+t=2026-10-11T17:22:09+0300 lvl=info msg="join connections" obj=join id=cf6283b89412 l=[::1]:5173 r=102.208.96.5:24522
+t=2026-10-11T17:27:34+0300 lvl=info msg="no configuration paths supplied"
+t=2026-10-11T17:27:34+0300 lvl=info msg="using configuration at default config path" path="/Users/mac/Library/Application Support/ngrok/ngrok.yml"
+t=2026-10-11T17:27:34+0300 lvl=info msg="open config file" path="/Users/mac/Library/Application Support/ngrok/ngrok.yml" err=<nil>
+t=2026-10-11T17:27:34+0300 lvl=info msg="FIPS 140 mode" enabled=false
+t=2026-10-11T17:27:34+0300 lvl=info msg="starting web service" obj=web addr=127.0.0.1:4040 allow_hosts=[]
+t=2026-10-11T17:27:35+0300 lvl=info msg=start pg=/api/tunnels id=9157145ec7d9caae
+t=2026-10-11T17:27:35+0300 lvl=info msg=end pg=/api/tunnels id=9157145ec7d9caae status=200 dur=148.75µs
+t=2026-10-11T17:27:35+0300 lvl=info msg="client session established" obj=tunnels.session
+t=2026-10-11T17:27:35+0300 lvl=info msg="tunnel session started" obj=tunnels.session
+t=2026-10-11T17:27:36+0300 lvl=info msg="started tunnel" obj=tunnels name=command_line addr=http://localhost:5173 url=https://giddy-matchbook-prognosis.ngrok-free.dev
+t=2026-10-11T17:27:36+0300 lvl=info msg=start pg=/api/tunnels id=aed3b8ab626dd4dd
+t=2026-10-11T17:27:36+0300 lvl=info msg=end pg=/api/tunnels id=aed3b8ab626dd4dd status=200 dur=59.708µs
+t=2026-10-11T17:32:32+0300 lvl=info msg=start pg=/api/tunnels id=015f1b76cda0b500
+t=2026-10-11T17:32:32+0300 lvl=info msg=end pg=/api/tunnels id=015f1b76cda0b500 status=200 dur=1.809292ms
+t=2026-10-11T17:32:32+0300 lvl=info msg=start pg=/api/tunnels id=d5671378336877df
+t=2026-10-11T17:32:32+0300 lvl=info msg=end pg=/api/tunnels id=d5671378336877df status=200 dur=49.292µs
+t=2026-10-11T17:32:33+0300 lvl=info msg="INFO received stop request obj=app stopReq=\"{err:<nil> restart:false}\""
+t=2026-10-11T17:32:33+0300 lvl=info msg="session closing" obj=tunnels.session err=<nil>
+t=2026-10-11T17:33:04+0300 lvl=info msg="no configuration paths supplied"
+t=2026-10-11T17:33:04+0300 lvl=info msg="using configuration at default config path" path="/Users/mac/Library/Application Support/ngrok/ngrok.yml"
+t=2026-10-11T17:33:04+0300 lvl=info msg="open config file" path="/Users/mac/Library/Application Support/ngrok/ngrok.yml" err=<nil>
+t=2026-10-11T17:33:04+0300 lvl=info msg="FIPS 140 mode" enabled=false
+t=2026-10-11T17:33:04+0300 lvl=info msg="starting web service" obj=web addr=127.0.0.1:4040 allow_hosts=[]
+t=2026-10-11T17:33:05+0300 lvl=info msg=start pg=/api/tunnels id=60a71092bd7b22b2
+t=2026-10-11T17:33:05+0300 lvl=info msg=end pg=/api/tunnels id=60a71092bd7b22b2 status=200 dur=129.875µs
+t=2026-10-11T17:33:06+0300 lvl=info msg=start pg=/api/tunnels id=5990a26a24ebeb0f
+t=2026-10-11T17:33:06+0300 lvl=info msg=end pg=/api/tunnels id=5990a26a24ebeb0f status=200 dur=48.833µs
+t=2026-10-11T17:33:07+0300 lvl=info msg="client session established" obj=tunnels.session
+t=2026-10-11T17:33:07+0300 lvl=info msg="tunnel session started" obj=tunnels.session
+t=2026-10-11T17:33:07+0300 lvl=info msg=start pg=/api/tunnels id=2e468e28d849d38e
+t=2026-10-11T17:33:07+0300 lvl=info msg=end pg=/api/tunnels id=2e468e28d849d38e status=200 dur=51.75µs
+t=2026-10-11T17:33:08+0300 lvl=info msg="started tunnel" obj=tunnels name=command_line addr=http://localhost:5173 url=https://giddy-matchbook-prognosis.ngrok-free.dev
+t=2026-10-11T17:33:08+0300 lvl=info msg=start pg=/api/tunnels id=35610eef0ea093c7
+t=2026-10-11T17:33:08+0300 lvl=info msg=end pg=/api/tunnels id=35610eef0ea093c7 status=200 dur=54.875µs
+t=2026-10-11T17:33:14+0300 lvl=info msg="join connections" obj=join id=3c47de2c4804 l=[::1]:5173 r=102.208.96.5:24527
+t=2026-10-11T17:33:14+0300 lvl=info msg="join connections" obj=join id=1a2d58cff04c l=[::1]:5173 r=102.208.96.5:24527
+t=2026-10-11T17:33:14+0300 lvl=info msg="join connections" obj=join id=b27123ad4438 l=[::1]:5173 r=102.208.96.5:24527
+t=2026-10-11T17:33:15+0300 lvl=info msg="join connections" obj=join id=04731bd58876 l=[::1]:5173 r=102.208.96.5:24527
+t=2026-10-11T17:33:17+0300 lvl=info msg="join connections" obj=join id=7b0a69e4ed1f l=[::1]:5173 r=102.208.96.5:24527
+t=2026-10-11T17:33:17+0300 lvl=info msg="join connections" obj=join id=d69275e121c2 l=[::1]:5173 r=102.208.96.5:24527
+t=2026-10-11T17:33:17+0300 lvl=info msg="join connections" obj=join id=74421ba0bc97 l=[::1]:5173 r=102.208.96.5:24527
+t=2026-10-11T17:33:18+0300 lvl=info msg="join connections" obj=join id=cbf6a44fbf52 l=[::1]:5173 r=102.208.96.5:24527
+t=2026-10-11T17:33:18+0300 lvl=info msg="join connections" obj=join id=658f58ae2f01 l=[::1]:5173 r=102.208.96.5:24513
+t=2026-10-11T17:44:58+0300 lvl=info msg="join connections" obj=join id=5c15f41644d4 l=[::1]:5173 r=102.208.96.5:24519
+t=2026-10-11T17:44:59+0300 lvl=info msg="join connections" obj=join id=7b80136e2ee7 l=[::1]:5173 r=102.208.96.5:24519
+t=2026-10-11T17:44:59+0300 lvl=info msg="join connections" obj=join id=11b64d416dc2 l=[::1]:5173 r=102.208.96.5:24519
+t=2026-10-11T17:44:59+0300 lvl=info msg="join connections" obj=join id=f65b92f0b490 l=[::1]:5173 r=102.208.96.5:24519
+t=2026-10-11T17:44:59+0300 lvl=info msg="join connections" obj=join id=bb68e2945a86 l=[::1]:5173 r=102.208.96.5:24519
+t=2026-10-11T17:45:00+0300 lvl=info msg="join connections" obj=join id=4a58d6acb8bb l=[::1]:5173 r=102.208.96.5:24519
+t=2026-10-11T17:45:01+0300 lvl=info msg="join connections" obj=join id=839a75e8f7f5 l=[::1]:5173 r=102.208.96.5:24519
+t=2026-10-11T17:45:01+0300 lvl=info msg="join connections" obj=join id=2a2b920a53f1 l=[::1]:5173 r=102.208.96.5:24520
+t=2026-10-11T17:45:36+0300 lvl=info msg="no configuration paths supplied"
+t=2026-10-11T17:45:36+0300 lvl=info msg="using configuration at default config path" path="/Users/mac/Library/Application Support/ngrok/ngrok.yml"
+t=2026-10-11T17:45:36+0300 lvl=info msg="open config file" path="/Users/mac/Library/Application Support/ngrok/ngrok.yml" err=<nil>
+t=2026-10-11T17:45:36+0300 lvl=info msg="FIPS 140 mode" enabled=false
+t=2026-10-11T17:45:36+0300 lvl=info msg="starting web service" obj=web addr=127.0.0.1:4040 allow_hosts=[]
+t=2026-10-11T17:45:37+0300 lvl=info msg=start pg=/api/tunnels id=0120b6f1094427e1
+t=2026-10-11T17:45:37+0300 lvl=info msg=end pg=/api/tunnels id=0120b6f1094427e1 status=200 dur=127.167µs
+t=2026-10-11T17:45:38+0300 lvl=info msg="client session established" obj=tunnels.session
+t=2026-10-11T17:45:38+0300 lvl=info msg="tunnel session started" obj=tunnels.session
+t=2026-10-11T17:45:38+0300 lvl=info msg="started tunnel" obj=tunnels name=command_line addr=http://localhost:5173 url=https://giddy-matchbook-prognosis.ngrok-free.dev
+t=2026-10-11T17:45:38+0300 lvl=info msg=start pg=/api/tunnels id=8aa2c1358233df70
+t=2026-10-11T17:45:38+0300 lvl=info msg=end pg=/api/tunnels id=8aa2c1358233df70 status=200 dur=47.25µs
+t=2026-10-11T17:52:33+0300 lvl=eror msg="heartbeat timeout, terminating session" obj=tunnels.session obj=csess id=c701c8243afe clientid=f913a778d4114ec228b1761796db56ea
+t=2026-10-11T17:52:33+0300 lvl=eror msg="session closed, starting reconnect loop" obj=tunnels.session obj=csess id=959eaf4782ba err="session closed"
+t=2026-10-11T17:52:33+0300 lvl=eror msg="failed to reconnect session" obj=tunnels.session err="failed to dial ngrok server with address \"connect.ngrok-agent.com:443\": dial tcp: lookup connect.ngrok-agent.com: no such host"
+t=2026-10-11T17:52:33+0300 lvl=eror msg="failed to reconnect session" obj=tunnels.session err="failed to dial ngrok server with address \"connect.ngrok-agent.com:443\": dial tcp: lookup connect.ngrok-agent.com: no such host"
+t=2026-10-11T17:52:34+0300 lvl=eror msg="failed to reconnect session" obj=tunnels.session err="failed to dial ngrok server with address \"connect.ngrok-agent.com:443\": dial tcp: lookup connect.ngrok-agent.com: no such host"
+t=2026-10-11T17:52:36+0300 lvl=eror msg="failed to reconnect session" obj=tunnels.session err="failed to dial ngrok server with address \"connect.ngrok-agent.com:443\": dial tcp: lookup connect.ngrok-agent.com: no such host"
+t=2026-10-11T17:52:40+0300 lvl=eror msg="failed to reconnect session" obj=tunnels.session err="failed to dial ngrok server with address \"connect.ngrok-agent.com:443\": dial tcp: lookup connect.ngrok-agent.com: no such host"
+t=2026-10-11T17:52:48+0300 lvl=eror msg="failed to reconnect session" obj=tunnels.session err="failed to dial ngrok server with address \"connect.ngrok-agent.com:443\": dial tcp: lookup connect.ngrok-agent.com: no such host"
+t=2026-10-11T18:10:36+0300 lvl=eror msg="failed to reconnect session" obj=tunnels.session err="failed to dial ngrok server with address \"connect.ngrok-agent.com:443\": dial tcp: lookup connect.ngrok-agent.com: no such host"
+t=2026-10-11T19:23:41+0300 lvl=info msg="client session established" obj=tunnels.session
+t=2026-10-11T19:23:41+0300 lvl=info msg="tunnel session started" obj=tunnels.session
+t=2026-10-11T19:27:31+0300 lvl=info msg="INFO received stop request obj=app stopReq=\"{err:<nil> restart:false}\""
+t=2026-10-11T19:27:31+0300 lvl=info msg="session closing" obj=tunnels.session err=<nil>
+t=2026-10-11T19:27:31+0300 lvl=info msg="accept failed" obj=tunnels.session obj=csess id=959eaf4782ba err="reconnecting session closed"
+t=2026-10-11T19:27:31+0300 lvl=info msg="no more state changes" obj=tunnels.session
+t=2026-10-11T19:35:20+0300 lvl=info msg="no configuration paths supplied"
+t=2026-10-11T19:35:20+0300 lvl=info msg="using configuration at default config path" path="/Users/mac/Library/Application Support/ngrok/ngrok.yml"
+t=2026-10-11T19:35:20+0300 lvl=info msg="open config file" path="/Users/mac/Library/Application Support/ngrok/ngrok.yml" err=<nil>
+t=2026-10-11T19:35:20+0300 lvl=info msg="FIPS 140 mode" enabled=false
+t=2026-10-11T19:35:20+0300 lvl=info msg="starting web service" obj=web addr=127.0.0.1:4040 allow_hosts=[]
+t=2026-10-11T19:35:21+0300 lvl=info msg=start pg=/api/tunnels id=4d1a645dc8508d15
+t=2026-10-11T19:35:21+0300 lvl=info msg=end pg=/api/tunnels id=4d1a645dc8508d15 status=200 dur=184.625µs
+t=2026-10-11T19:35:21+0300 lvl=info msg="client session established" obj=tunnels.session
+t=2026-10-11T19:35:21+0300 lvl=info msg="tunnel session started" obj=tunnels.session
+t=2026-10-11T19:35:21+0300 lvl=info msg="started tunnel" obj=tunnels name=command_line addr=http://localhost:5173 url=https://giddy-matchbook-prognosis.ngrok-free.dev
+t=2026-10-11T19:35:22+0300 lvl=info msg=start pg=/api/tunnels id=bf2fda21ddbece55
+t=2026-10-11T19:35:22+0300 lvl=info msg=end pg=/api/tunnels id=bf2fda21ddbece55 status=200 dur=73.375µs
+t=2026-10-11T19:35:27+0300 lvl=info msg="join connections" obj=join id=b6c5a6385640 l=[::1]:5173 r=102.208.96.56:55054
+t=2026-10-11T19:35:28+0300 lvl=info msg="join connections" obj=join id=70b23ef8aebd l=[::1]:5173 r=102.208.96.56:55054
+t=2026-10-11T19:35:28+0300 lvl=info msg="join connections" obj=join id=88b0cf802ec3 l=[::1]:5173 r=102.208.96.56:55054
+t=2026-10-11T19:35:29+0300 lvl=info msg="join connections" obj=join id=9bb1b10b3768 l=[::1]:5173 r=102.208.96.56:55054
+t=2026-10-11T19:35:29+0300 lvl=info msg="join connections" obj=join id=b8f7a1f4d2af l=[::1]:5173 r=102.208.96.56:55054
+t=2026-10-11T19:35:29+0300 lvl=info msg="join connections" obj=join id=d49a4a950b2a l=[::1]:5173 r=102.208.96.56:55054
+t=2026-10-11T19:35:29+0300 lvl=info msg="join connections" obj=join id=100e08eb45e7 l=[::1]:5173 r=102.208.96.56:55054
+t=2026-10-11T19:35:34+0300 lvl=info msg="join connections" obj=join id=f4538df86cc2 l=[::1]:5173 r=102.208.96.56:55054
+t=2026-10-11T19:35:38+0300 lvl=info msg="join connections" obj=join id=eff28d6e1e3e l=[::1]:5173 r=102.208.96.56:55054
+t=2026-10-11T19:35:38+0300 lvl=info msg="join connections" obj=join id=19f8f556d5a6 l=[::1]:5173 r=102.208.96.56:55054
+t=2026-10-11T19:35:42+0300 lvl=info msg="join connections" obj=join id=b1fcde06a891 l=[::1]:5173 r=102.208.96.56:55041
+t=2026-10-11T19:36:05+0300 lvl=info msg="join connections" obj=join id=53ccd1ed8d3a l=[::1]:5173 r=102.208.96.56:55054
+t=2026-10-11T19:36:07+0300 lvl=info msg="join connections" obj=join id=645e83c8619e l=[::1]:5173 r=102.208.96.56:55054
+t=2026-10-11T19:36:07+0300 lvl=info msg="join connections" obj=join id=60f940fac587 l=[::1]:5173 r=102.208.96.56:55054
+t=2026-10-11T19:36:09+0300 lvl=info msg="join connections" obj=join id=2366e1e9c9ca l=[::1]:5173 r=102.208.96.56:55054
+t=2026-10-11T19:36:09+0300 lvl=info msg="join connections" obj=join id=877684993831 l=[::1]:5173 r=102.208.96.56:55054
+t=2026-10-11T19:36:09+0300 lvl=info msg="join connections" obj=join id=bfb22fe04dbb l=[::1]:5173 r=102.208.96.56:55054
+t=2026-10-11T19:36:11+0300 lvl=info msg="join connections" obj=join id=a5c4a2371914 l=[::1]:5173 r=102.208.96.56:55054
+t=2026-10-11T19:36:11+0300 lvl=info msg="join connections" obj=join id=2c03d3b2dc00 l=[::1]:5173 r=102.208.96.56:55054
+t=2026-10-11T19:36:13+0300 lvl=info msg="join connections" obj=join id=6f22c42e23da l=[::1]:5173 r=102.208.96.56:55042
+t=2026-10-11T19:36:15+0300 lvl=info msg="join connections" obj=join id=e3543c1df80b l=[::1]:5173 r=102.208.96.56:55054
+t=2026-10-11T19:36:18+0300 lvl=info msg="join connections" obj=join id=5190e825ad51 l=[::1]:5173 r=102.208.96.56:55054
+t=2026-10-11T19:41:04+0300 lvl=info msg="join connections" obj=join id=200aefd6df01 l=[::1]:5173 r=102.208.96.56:55049
+t=2026-10-11T19:45:43+0300 lvl=info msg="Got quit command" obj=consoleui
+t=2026-10-11T19:45:43+0300 lvl=info msg="INFO received stop request obj=app stopReq=\"{err:<nil> restart:false}\""
+t=2026-10-11T19:45:43+0300 lvl=info msg="session closing" obj=tunnels.session err=<nil>
+t=2026-10-11T19:45:43+0300 lvl=info msg="accept failed" obj=tunnels.session obj=csess id=eb188e1ea608 err="reconnecting session closed"
+t=2026-10-11T19:54:42+0300 lvl=info msg="no configuration paths supplied"
+t=2026-10-11T19:54:42+0300 lvl=info msg="using configuration at default config path" path="/Users/mac/Library/Application Support/ngrok/ngrok.yml"
+t=2026-10-11T19:54:42+0300 lvl=info msg="open config file" path="/Users/mac/Library/Application Support/ngrok/ngrok.yml" err=<nil>
+t=2026-10-11T19:54:42+0300 lvl=info msg="FIPS 140 mode" enabled=false
+t=2026-10-11T19:54:42+0300 lvl=info msg="starting web service" obj=web addr=127.0.0.1:4040 allow_hosts=[]
+t=2026-10-11T19:54:43+0300 lvl=info msg=start pg=/api/tunnels id=38711d47bc550aae
+t=2026-10-11T19:54:43+0300 lvl=info msg=end pg=/api/tunnels id=38711d47bc550aae status=200 dur=132.333µs
+t=2026-10-11T19:54:44+0300 lvl=info msg=start pg=/api/tunnels id=54bc368eb1c4708d
+t=2026-10-11T19:54:44+0300 lvl=info msg=end pg=/api/tunnels id=54bc368eb1c4708d status=200 dur=50.709µs
+t=2026-10-11T19:54:45+0300 lvl=info msg="client session established" obj=tunnels.session
+t=2026-10-11T19:54:45+0300 lvl=info msg="tunnel session started" obj=tunnels.session
+t=2026-10-11T19:54:45+0300 lvl=info msg="started tunnel" obj=tunnels name=command_line addr=http://localhost:5173 url=https://giddy-matchbook-prognosis.ngrok-free.dev
+t=2026-10-11T19:54:45+0300 lvl=info msg=start pg=/api/tunnels id=6fb6000d0cc3829c
+t=2026-10-11T19:54:45+0300 lvl=info msg=end pg=/api/tunnels id=6fb6000d0cc3829c status=200 dur=48.333µs
+t=2026-10-11T20:08:51+0300 lvl=info msg="join connections" obj=join id=ec43da512775 l=[::1]:5173 r=102.208.96.56:55051
+t=2026-10-11T20:08:53+0300 lvl=info msg="join connections" obj=join id=ac78f94ab5a3 l=[::1]:5173 r=102.208.96.56:55051
+t=2026-10-11T20:08:53+0300 lvl=info msg="join connections" obj=join id=2683f09b0706 l=[::1]:5173 r=102.208.96.56:55051
+t=2026-10-11T20:08:56+0300 lvl=info msg="join connections" obj=join id=afa8ee592faf l=[::1]:5173 r=102.208.96.56:55051
+t=2026-10-11T20:08:56+0300 lvl=info msg="join connections" obj=join id=1fcbd2cdf496 l=[::1]:5173 r=102.208.96.56:55051
+t=2026-10-11T20:09:02+0300 lvl=info msg="join connections" obj=join id=5e48400dbff6 l=[::1]:5173 r=102.208.96.56:55051
+t=2026-10-11T20:09:02+0300 lvl=info msg="join connections" obj=join id=30aa12797176 l=[::1]:5173 r=102.208.96.56:55051
+t=2026-10-11T20:09:04+0300 lvl=info msg="join connections" obj=join id=6bd6aab6c548 l=[::1]:5173 r=102.208.96.56:55051
+t=2026-10-11T20:09:04+0300 lvl=info msg="join connections" obj=join id=98148b0d76ea l=[::1]:5173 r=102.208.96.56:55052
+t=2026-10-11T20:09:13+0300 lvl=info msg="join connections" obj=join id=4eb9ce8db258 l=[::1]:5173 r=102.208.96.56:55051
+t=2026-10-11T20:09:14+0300 lvl=info msg="join connections" obj=join id=998961b8685e l=[::1]:5173 r=102.208.96.56:55051
+t=2026-10-11T20:10:27+0300 lvl=info msg="join connections" obj=join id=0b1aad2ac5a0 l=[::1]:5173 r=102.208.96.56:55051
+t=2026-10-11T20:10:27+0300 lvl=info msg="join connections" obj=join id=cddf38eca8aa l=[::1]:5173 r=102.208.96.56:55051
+t=2026-10-11T20:10:27+0300 lvl=info msg="join connections" obj=join id=22622283c784 l=[::1]:5173 r=102.208.96.56:55051
+t=2026-10-11T20:10:28+0300 lvl=info msg="join connections" obj=join id=648e121612e9 l=[::1]:5173 r=102.208.96.56:55051
+t=2026-10-11T20:10:28+0300 lvl=info msg="join connections" obj=join id=520029ceaee0 l=[::1]:5173 r=102.208.96.56:55051
+t=2026-10-11T20:10:29+0300 lvl=info msg="join connections" obj=join id=ae55cae72c22 l=[::1]:5173 r=102.208.96.56:55051
+t=2026-10-11T20:10:30+0300 lvl=info msg="join connections" obj=join id=e645086e934b l=[::1]:5173 r=102.208.96.56:55051
+t=2026-10-11T20:10:30+0300 lvl=info msg="join connections" obj=join id=ff1fc082e8c5 l=[::1]:5173 r=102.208.96.56:55053

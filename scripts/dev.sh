@@ -18,6 +18,24 @@ if [[ -z "${BOT_TOKEN:-}" ]]; then
   exit 1
 fi
 
+# Two bots polling getUpdates get 409-killed by Telegram — refuse to double-start.
+# (Lock file, not pgrep: pnpm wraps this script in a shell whose cmdline also matches.)
+LOCK_FILE="$(pwd)/.dev.lock"
+if [[ -f "$LOCK_FILE" ]]; then
+  OLD_PID=$(cat "$LOCK_FILE" 2>/dev/null || true)
+  if [[ -n "$OLD_PID" ]] && kill -0 "$OLD_PID" 2>/dev/null; then
+    echo "[dev] another pnpm dev is already running (pid ${OLD_PID}) — Ctrl-C it first" >&2
+    exit 1
+  fi
+fi
+echo $$ > "$LOCK_FILE"
+STRAY_BOT=$(pgrep -f "cli.mjs src/index.ts" 2>/dev/null | head -1 || true)
+if [[ -n "$STRAY_BOT" ]]; then
+  echo "[dev] a bot process is already running (pid ${STRAY_BOT}) — kill it first," >&2
+  echo "[dev] otherwise Telegram 409s both bots and neither responds" >&2
+  exit 1
+fi
+
 STARTED_VITE=""
 STARTED_NGROK=""
 STARTED_BOT=""
@@ -33,6 +51,9 @@ cleanup() {
     [[ -n "$pid" ]] && kill "$pid" 2>/dev/null || true
   done
   wait 2>/dev/null || true
+  if [[ -f "$LOCK_FILE" ]] && [[ "$(cat "$LOCK_FILE" 2>/dev/null)" == "$$" ]]; then
+    rm -f "$LOCK_FILE"
+  fi
   echo "[dev] stopped"
 }
 trap cleanup EXIT

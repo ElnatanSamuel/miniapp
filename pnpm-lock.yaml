@@ -12,6 +12,9 @@ importers:
 
   apps/bot:
     dependencies:
+      '@tce/parser':
+        specifier: workspace:*
+        version: link:../../packages/parser
       grammy:
         specifier: ^1.46.0
         version: 1.46.0

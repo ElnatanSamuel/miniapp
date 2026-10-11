@@ -8,6 +8,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@tce/parser": "workspace:*",
     "grammy": "^1.46.0"
   },
   "devDependencies": {

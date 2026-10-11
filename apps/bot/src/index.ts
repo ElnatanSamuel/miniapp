@@ -1,6 +1,9 @@
 import { Bot } from "grammy";
 import { env, maskToken } from "./env";
 import { createLogger } from "./log";
+import { savePhoto } from "./ingestion/media";
+import { parseCaption } from "./ingestion/parse";
+import { updateIndex, writeProduct, type StoredProduct } from "./ingestion/sync";
 
 const log = createLogger("bot");
 
@@ -27,23 +30,51 @@ bot.on("channel_post", async (ctx) => {
   if (!caption) return;
 
   const chat = post.chat.title ?? String(post.chat.id);
-  log.info(`channel_post #${post.message_id} in "${chat}" — injecting order button`);
+  const parsed = parseCaption(caption);
+
+  if (parsed.price == null) {
+    log.info(`channel_post #${post.message_id} in "${chat}" — no price in caption, skipped`);
+    return;
+  }
+
+  const productId = `p_${Math.abs(post.chat.id)}_${post.message_id}`;
+  log.info(
+    `channel_post #${post.message_id} in "${chat}" — parsed title="${parsed.title}" price=${parsed.price} variants=[${parsed.variants.join(", ")}]`,
+  );
+
+  const images: string[] = [];
+  if (post.photo?.length) {
+    try {
+      const url = await savePhoto(bot, env.botToken, post.photo, productId);
+      if (url) images.push(url);
+    } catch (err) {
+      log.error(`photo download failed for #${post.message_id}:`, err);
+    }
+  }
+
+  const product: StoredProduct = {
+    id: productId,
+    channelId: post.chat.id,
+    messageId: post.message_id,
+    title: parsed.title,
+    description: parsed.description,
+    price: parsed.price,
+    variants: parsed.variants,
+    images,
+    createdAt: new Date().toISOString(),
+  };
+  await writeProduct(product);
+  await updateIndex(product);
 
   // web_app inline buttons are private-chat ONLY (Bot API) — channels need a
   // plain url button pointing at the main Mini App direct link instead.
-  const deepLink = `https://t.me/${bot.botInfo.username}?startapp=p_demo`;
+  const deepLink = `https://t.me/${bot.botInfo.username}?startapp=${productId}`;
+  const buttonText = `🛍 ይዘዙ / Order Now (${parsed.price.toLocaleString("en-US")} ETB)`;
 
   try {
     await ctx.api.editMessageReplyMarkup(post.chat.id, post.message_id, {
       reply_markup: {
-        inline_keyboard: [
-          [
-            {
-              text: "🛍 ይዘዙ / Order Now (2,400 ETB)",
-              url: deepLink,
-            },
-          ],
-        ],
+        inline_keyboard: [[{ text: buttonText, url: deepLink }]],
       },
     });
     log.info(`button injected → "${chat}" post #${post.message_id} → ${deepLink}`);

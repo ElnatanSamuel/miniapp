@@ -4,5 +4,10 @@ body,
   margin: 0;
   padding: 0;
   min-height: 100vh;
-  background: #ffffff;
+  background: #f2f0ea;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }

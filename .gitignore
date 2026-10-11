@@ -5,3 +5,5 @@ dist/
 .env.local
 *.log
 .DS_Store
+.dev.lock
+apps/tma/public/api/
