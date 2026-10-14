@@ -3,7 +3,9 @@ import { fetchIndex, fetchProduct, NotFoundError } from "./api/client";
 import type { Product } from "./api/types";
 import { tma } from "./lib/log";
 import { getWebApp } from "./lib/telegram";
+import CheckoutPage from "./pages/CheckoutPage";
 import ProductPage from "./pages/ProductPage";
+import SuccessPage from "./pages/SuccessPage";
 
 const QUERY_KEYS = ["p", "tgWebAppStartParam"];
 
@@ -22,8 +24,14 @@ type State =
   | { status: "empty" }
   | { status: "error"; message: string };
 
+type View =
+  | { page: "product" }
+  | { page: "checkout"; variant: string; quantity: number }
+  | { page: "success"; orderId: string };
+
 export default function App() {
   const [state, setState] = useState<State>({ status: "loading" });
+  const [view, setView] = useState<View>({ page: "product" });
 
   useEffect(() => {
     let cancelled = false;
@@ -149,5 +157,33 @@ export default function App() {
     );
   }
 
-  return <ProductPage key={state.product.id} product={state.product} />;
+  if (view.page === "checkout") {
+    return (
+      <CheckoutPage
+        product={state.product}
+        selectedVariant={view.variant}
+        quantity={view.quantity}
+        onBack={() => setView({ page: "product" })}
+        onSuccess={(orderId) => setView({ page: "success", orderId })}
+      />
+    );
+  }
+
+  if (view.page === "success") {
+    return (
+      <SuccessPage
+        orderId={view.orderId}
+        onDone={() => setView({ page: "product" })}
+      />
+    );
+  }
+
+  return (
+    <ProductPage
+      key={state.product.id}
+      product={state.product}
+      onCheckout={(variant, quantity) => setView({ page: "checkout", variant, quantity })}
+    />
+  );
 }
+

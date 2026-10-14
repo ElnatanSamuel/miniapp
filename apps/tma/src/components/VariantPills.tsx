@@ -1,9 +1,9 @@
-type Props = {
+type Props = Readonly<{
   sizes: string[];
   value: string | null;
   onChange: (size: string) => void;
   soldOut?: string[];
-};
+}>;
 
 export default function VariantPills({ sizes, value, onChange, soldOut = [] }: Props) {
   return (

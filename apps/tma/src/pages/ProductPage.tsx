@@ -5,11 +5,14 @@ import { getWebApp } from "../lib/telegram";
 import type { Product } from "../api/types";
 import "../styles/product.css";
 
-type Props = { product: Product };
+type Props = Readonly<{
+  product: Product;
+  onCheckout?: (variant: string, quantity: number) => void;
+}>;
 
 const formatPrice = (n: number) => `${n.toLocaleString("en-US")} ETB`;
 
-export default function ProductPage({ product }: Props) {
+export default function ProductPage({ product, onCheckout: navigateToCheckout }: Props) {
   const [imageIdx, setImageIdx] = useState(0);
   const [size, setSize] = useState<string | null>(
     product.variants.length === 1 ? product.variants[0] : null,
@@ -45,13 +48,18 @@ export default function ProductPage({ product }: Props) {
 
   const onCheckout = () => {
     if (!requireSize()) return;
+    const selectedVariant = size ?? (product.variants[0] || "Standard");
     haptics?.impactOccurred?.("medium");
     tma.info("go to checkout (direct path, no cart)", {
       productId: product.id,
-      size,
+      size: selectedVariant,
       price: product.price,
     });
-    showToast("Checkout — ታዲያ · coming soon");
+    if (navigateToCheckout) {
+      navigateToCheckout(selectedVariant, 1);
+    } else {
+      showToast("Checkout — ታዲያ · coming soon");
+    }
   };
 
   return (
@@ -131,9 +139,9 @@ export default function ProductPage({ product }: Props) {
       </div>
 
       {toast && (
-        <div className={`pdp__toast pdp__toast--${toast.kind}`} role="status">
+        <output className={`pdp__toast pdp__toast--${toast.kind}`}>
           {toast.text}
-        </div>
+        </output>
       )}
     </div>
   );

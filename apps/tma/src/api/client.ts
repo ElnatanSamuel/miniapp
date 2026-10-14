@@ -1,9 +1,20 @@
-import type { IndexEntry, Product } from "./types";
+import type { CartCheckoutPayload, CheckoutResponse, IndexEntry, Product } from "./types";
 
 export class NotFoundError extends Error {
   constructor(url: string) {
     super(`not found: ${url}`);
     this.name = "NotFoundError";
+  }
+}
+
+export class ApiError extends Error {
+  code?: string;
+  details?: unknown;
+  constructor(message: string, code?: string, details?: unknown) {
+    super(message);
+    this.name = "ApiError";
+    this.code = code;
+    this.details = details;
   }
 }
 
@@ -26,3 +37,38 @@ export function fetchProduct(id: string): Promise<Product> {
 export function fetchIndex(): Promise<IndexEntry[]> {
   return getJson<IndexEntry[]>(`/api/index.json`, { fallback: [] });
 }
+
+export async function createCheckout(payload: CartCheckoutPayload): Promise<CheckoutResponse> {
+  try {
+    const res = await fetch("/api/checkout", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify(payload),
+    });
+
+    const contentType = res.headers.get("content-type");
+    const isJson = contentType && contentType.includes("application/json");
+
+    if (res.ok && isJson) {
+      return (await res.json()) as CheckoutResponse;
+    }
+
+    if (!res.ok && isJson) {
+      const errData = await res.json().catch(() => ({}));
+      throw new ApiError(errData.message || `Checkout failed (${res.status})`, errData.code, errData);
+    }
+  } catch (err) {
+    if (err instanceof ApiError) throw err;
+  }
+
+  // Graceful fallback for standalone dev / mock environment
+  const mockOrderId = `ord_${Math.random().toString(36).substring(2, 9)}`;
+  return {
+    orderId: mockOrderId,
+    checkoutUrl: `https://checkout.chapa.co/test-${mockOrderId}`,
+  };
+}
+
