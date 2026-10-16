@@ -19,7 +19,12 @@ export class ApiError extends Error {
 }
 
 async function getJson<T>(url: string, opts: { fallback?: T } = {}): Promise<T> {
-  const res = await fetch(url, { headers: { accept: "application/json" } });
+  const res = await fetch(url, {
+    headers: {
+      accept: "application/json",
+      "ngrok-skip-browser-warning": "true",
+    },
+  });
   // A missing file may come back as 404 OR as the SPA fallback page (200 + HTML).
   const isHtml = res.headers.get("content-type")?.includes("text/html") ?? false;
   if (res.status === 404 || (res.ok && isHtml)) {
@@ -45,6 +50,7 @@ export async function createCheckout(payload: CartCheckoutPayload): Promise<Chec
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
+        "ngrok-skip-browser-warning": "true",
       },
       body: JSON.stringify(payload),
     });

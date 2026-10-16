@@ -474,3 +474,222 @@ t=2026-10-11T20:10:28+0300 lvl=info msg="join connections" obj=join id=520029cea
 t=2026-10-11T20:10:29+0300 lvl=info msg="join connections" obj=join id=ae55cae72c22 l=[::1]:5173 r=102.208.96.56:55051
 t=2026-10-11T20:10:30+0300 lvl=info msg="join connections" obj=join id=e645086e934b l=[::1]:5173 r=102.208.96.56:55051
 t=2026-10-11T20:10:30+0300 lvl=info msg="join connections" obj=join id=ff1fc082e8c5 l=[::1]:5173 r=102.208.96.56:55053
+t=2026-10-11T20:20:59+0300 lvl=info msg="no configuration paths supplied"
+t=2026-10-11T20:20:59+0300 lvl=info msg="using configuration at default config path" path=/home/musie/.config/ngrok/ngrok.yml
+t=2026-10-11T20:20:59+0300 lvl=info msg="open config file" path=/home/musie/.config/ngrok/ngrok.yml err=<nil>
+t=2026-10-11T20:20:59+0300 lvl=info msg="FIPS 140 mode" enabled=false
+t=2026-10-11T20:20:59+0300 lvl=info msg="starting web service" obj=web addr=127.0.0.1:4040 allow_hosts=[]
+t=2026-10-11T20:21:00+0300 lvl=info msg=start pg=/api/tunnels id=782b0c457dc4c551
+t=2026-10-11T20:21:00+0300 lvl=info msg=end pg=/api/tunnels id=782b0c457dc4c551 status=200 dur=1.664668ms
+t=2026-10-11T20:21:00+0300 lvl=info msg="client session established" obj=tunnels.session
+t=2026-10-11T20:21:00+0300 lvl=info msg="tunnel session started" obj=tunnels.session
+t=2026-10-11T20:21:01+0300 lvl=info msg="started tunnel" obj=tunnels name=command_line addr=http://localhost:5173 url=https://burl-postcritical-gerald.ngrok-free.dev
+t=2026-10-11T20:21:01+0300 lvl=info msg=start pg=/api/tunnels id=83c9e3eb6edc3cdb
+t=2026-10-11T20:21:01+0300 lvl=info msg=end pg=/api/tunnels id=83c9e3eb6edc3cdb status=200 dur=137.045µs
+t=2026-10-11T20:22:09+0300 lvl=info msg="Got quit command" obj=consoleui
+t=2026-10-11T20:22:09+0300 lvl=info msg="INFO received stop request obj=app stopReq=\"{err:<nil> restart:false}\""
+t=2026-10-11T20:22:09+0300 lvl=info msg="session closing" obj=tunnels.session err=<nil>
+t=2026-10-11T20:24:15+0300 lvl=info msg="no configuration paths supplied"
+t=2026-10-11T20:24:15+0300 lvl=info msg="using configuration at default config path" path=/home/musie/.config/ngrok/ngrok.yml
+t=2026-10-11T20:24:15+0300 lvl=info msg="open config file" path=/home/musie/.config/ngrok/ngrok.yml err=<nil>
+t=2026-10-11T20:24:15+0300 lvl=info msg="FIPS 140 mode" enabled=false
+t=2026-10-11T20:24:15+0300 lvl=info msg="starting web service" obj=web addr=127.0.0.1:4040 allow_hosts=[]
+t=2026-10-11T20:24:16+0300 lvl=info msg=start pg=/api/tunnels id=862b08b3dc57dfce
+t=2026-10-11T20:24:16+0300 lvl=info msg=end pg=/api/tunnels id=862b08b3dc57dfce status=200 dur=599.827µs
+t=2026-10-11T20:24:17+0300 lvl=info msg=start pg=/api/tunnels id=0dda3ee30502fb20
+t=2026-10-11T20:24:17+0300 lvl=info msg=end pg=/api/tunnels id=0dda3ee30502fb20 status=200 dur=108.255µs
+t=2026-10-11T20:24:18+0300 lvl=info msg=start pg=/api/tunnels id=10c7c54a13a4eb38
+t=2026-10-11T20:24:18+0300 lvl=info msg=end pg=/api/tunnels id=10c7c54a13a4eb38 status=200 dur=147.707µs
+t=2026-10-11T20:24:19+0300 lvl=info msg=start pg=/api/tunnels id=f023280de0d21dbf
+t=2026-10-11T20:24:19+0300 lvl=info msg=end pg=/api/tunnels id=f023280de0d21dbf status=200 dur=114.796µs
+t=2026-10-11T20:24:21+0300 lvl=info msg=start pg=/api/tunnels id=d18f40a2d0534749
+t=2026-10-11T20:24:21+0300 lvl=info msg=end pg=/api/tunnels id=d18f40a2d0534749 status=200 dur=92.096µs
+t=2026-10-11T20:24:21+0300 lvl=eror msg="failed to reconnect session" obj=tunnels.session err="failed to dial ngrok server with address \"connect.ngrok-agent.com:443\": dial tcp [2a05:d014:21b:8e02:600f:17af:ae7a:86f2]:443: connect: network is unreachable"
+t=2026-10-11T20:24:22+0300 lvl=info msg=start pg=/api/tunnels id=2fe720d1019e92b7
+t=2026-10-11T20:24:22+0300 lvl=info msg=end pg=/api/tunnels id=2fe720d1019e92b7 status=200 dur=105.018µs
+t=2026-10-11T20:24:22+0300 lvl=info msg="client session established" obj=tunnels.session
+t=2026-10-11T20:24:22+0300 lvl=info msg="tunnel session started" obj=tunnels.session
+t=2026-10-11T20:24:23+0300 lvl=info msg="started tunnel" obj=tunnels name=command_line addr=http://localhost:5173 url=https://burl-postcritical-gerald.ngrok-free.dev
+t=2026-10-11T20:24:23+0300 lvl=info msg=start pg=/api/tunnels id=d5cb164115b831e4
+t=2026-10-11T20:24:23+0300 lvl=info msg=end pg=/api/tunnels id=d5cb164115b831e4 status=200 dur=145.485µs
+t=2026-10-11T20:24:46+0300 lvl=info msg="join connections" obj=join id=4b841f8cc0de l=127.0.0.1:5173 r=196.191.122.47:14522
+t=2026-10-11T20:24:48+0300 lvl=info msg="join connections" obj=join id=bb9e17b5122b l=127.0.0.1:5173 r=196.191.122.47:14522
+t=2026-10-11T20:24:48+0300 lvl=info msg="join connections" obj=join id=6c8ddda349ed l=127.0.0.1:5173 r=196.191.122.47:14522
+t=2026-10-11T20:24:53+0300 lvl=info msg="join connections" obj=join id=61b7e0976c21 l=127.0.0.1:5173 r=196.191.122.47:14522
+t=2026-10-11T20:24:53+0300 lvl=info msg="join connections" obj=join id=8a4cda34ec64 l=127.0.0.1:5173 r=196.191.122.47:14522
+t=2026-10-11T20:24:53+0300 lvl=info msg="join connections" obj=join id=d82d8b1ade3e l=127.0.0.1:5173 r=196.191.122.47:14522
+t=2026-10-11T20:24:53+0300 lvl=info msg="join connections" obj=join id=be4573bfb29d l=127.0.0.1:5173 r=196.191.122.47:14522
+t=2026-10-11T20:24:53+0300 lvl=info msg="join connections" obj=join id=da559943fdce l=127.0.0.1:5173 r=196.191.122.47:14522
+t=2026-10-11T20:24:54+0300 lvl=info msg="join connections" obj=join id=39f8680c44f4 l=127.0.0.1:5173 r=196.191.122.47:14537
+t=2026-10-11T20:24:58+0300 lvl=info msg="join connections" obj=join id=bac7f63da6bb l=127.0.0.1:5173 r=196.191.122.47:14522
+t=2026-10-11T20:24:58+0300 lvl=info msg="join connections" obj=join id=bd50bfc57efe l=127.0.0.1:5173 r=196.191.122.47:14522
+t=2026-10-11T20:26:23+0300 lvl=info msg="join connections" obj=join id=1a308188a2d6 l=127.0.0.1:5173 r=196.191.122.47:14522
+t=2026-10-11T20:30:24+0300 lvl=info msg="join connections" obj=join id=14114d857652 l=127.0.0.1:5173 r=196.191.122.47:14522
+t=2026-10-11T20:30:24+0300 lvl=info msg="join connections" obj=join id=f96d7c69d1f8 l=127.0.0.1:5173 r=196.191.122.47:14522
+t=2026-10-11T20:30:24+0300 lvl=info msg="join connections" obj=join id=effc44a4c4b2 l=127.0.0.1:5173 r=196.191.122.47:14522
+t=2026-10-11T20:30:24+0300 lvl=info msg="join connections" obj=join id=c9b4ee31781e l=127.0.0.1:5173 r=196.191.122.47:14522
+t=2026-10-11T20:30:25+0300 lvl=info msg="join connections" obj=join id=a6ac4ac8f56c l=127.0.0.1:5173 r=196.191.122.47:14522
+t=2026-10-11T20:30:25+0300 lvl=info msg="join connections" obj=join id=d13d3dfe1781 l=127.0.0.1:5173 r=196.191.122.47:14767
+t=2026-10-11T21:09:07+0300 lvl=eror msg="heartbeat timeout, terminating session" obj=tunnels.session obj=csess id=8fdd14ddf151 clientid=8f579ffef83b495906720f00c42a0b0c
+t=2026-10-11T21:09:07+0300 lvl=eror msg="session closed, starting reconnect loop" obj=tunnels.session id=9271c5ff5c0c err="session closed" obj=csess
+t=2026-10-11T21:09:13+0300 lvl=eror msg="failed to reconnect session" obj=tunnels.session err="failed to send authentication request: failed to fetch CRL. errors encountered: Get \"http://crl.ngrok-agent.com/ngrok.crl\": dial tcp [2600:9000:20c8:1a00:8:ba10:9900:93a1]:80: connect: network is unreachable"
+t=2026-10-11T21:09:16+0300 lvl=info msg="client session established" obj=tunnels.session
+t=2026-10-11T21:09:16+0300 lvl=info msg="tunnel session started" obj=tunnels.session
+t=2026-10-11T21:54:02+0300 lvl=eror msg="heartbeat timeout, terminating session" obj=tunnels.session obj=csess id=9604bd46176a clientid=8f579ffef83b495906720f00c42a0b0c
+t=2026-10-11T21:54:02+0300 lvl=eror msg="session closed, starting reconnect loop" obj=tunnels.session obj=csess id=9271c5ff5c0c err="session closed"
+t=2026-10-11T21:54:08+0300 lvl=eror msg="failed to reconnect session" obj=tunnels.session err="failed to dial ngrok server with address \"connect.ngrok-agent.com:443\": dial tcp [2a05:d014:21b:8e01:fabb:6042:6988:4bdc]:443: connect: network is unreachable"
+t=2026-10-11T21:54:34+0300 lvl=eror msg="heartbeat timeout, terminating session" obj=tunnels.session obj=csess id=a93b053800b9
+t=2026-10-11T21:54:34+0300 lvl=eror msg="failed to reconnect session" obj=tunnels.session err="failed to send authentication request: session closed"
+t=2026-10-11T21:54:50+0300 lvl=info msg="client session established" obj=tunnels.session
+t=2026-10-11T21:54:50+0300 lvl=info msg="tunnel session started" obj=tunnels.session
+t=2026-10-12T18:20:55+0300 lvl=info msg="no configuration paths supplied"
+t=2026-10-12T18:20:55+0300 lvl=info msg="using configuration at default config path" path=/home/musie/.config/ngrok/ngrok.yml
+t=2026-10-12T18:20:55+0300 lvl=info msg="open config file" path=/home/musie/.config/ngrok/ngrok.yml err=<nil>
+t=2026-10-12T18:20:55+0300 lvl=info msg="FIPS 140 mode" enabled=false
+t=2026-10-12T18:20:55+0300 lvl=info msg="starting web service" obj=web addr=127.0.0.1:4040 allow_hosts=[]
+t=2026-10-12T18:20:56+0300 lvl=info msg=start pg=/api/tunnels id=10a5293803f65f6e
+t=2026-10-12T18:20:56+0300 lvl=info msg=end pg=/api/tunnels id=10a5293803f65f6e status=200 dur=542.992µs
+t=2026-10-12T18:20:56+0300 lvl=info msg="Got quit command" obj=consoleui
+t=2026-10-12T18:20:56+0300 lvl=info msg="INFO received stop request obj=app stopReq=\"{err:<nil> restart:false}\""
+t=2026-10-12T18:20:56+0300 lvl=info msg="session closing" obj=tunnels.session err=<nil>
+t=2026-10-15T20:59:32+0300 lvl=info msg="no configuration paths supplied"
+t=2026-10-15T20:59:32+0300 lvl=info msg="using configuration at default config path" path=/home/musie/.config/ngrok/ngrok.yml
+t=2026-10-15T20:59:32+0300 lvl=info msg="open config file" path=/home/musie/.config/ngrok/ngrok.yml err=<nil>
+t=2026-10-15T20:59:32+0300 lvl=info msg="FIPS 140 mode" enabled=false
+t=2026-10-15T20:59:32+0300 lvl=info msg="starting web service" obj=web addr=127.0.0.1:4040 allow_hosts=[]
+t=2026-10-15T20:59:32+0300 lvl=info msg=start pg=/api/tunnels id=6bab6e0674a445cb
+t=2026-10-15T20:59:32+0300 lvl=info msg=end pg=/api/tunnels id=6bab6e0674a445cb status=200 dur=458.301µs
+t=2026-10-15T20:59:33+0300 lvl=info msg="client session established" obj=tunnels.session
+t=2026-10-15T20:59:33+0300 lvl=info msg="tunnel session started" obj=tunnels.session
+t=2026-10-15T20:59:33+0300 lvl=info msg="started tunnel" obj=tunnels name=command_line addr=http://localhost:5173 url=https://burl-postcritical-gerald.ngrok-free.dev
+t=2026-10-15T20:59:34+0300 lvl=info msg=start pg=/api/tunnels id=508d99efcb6f4b06
+t=2026-10-15T20:59:34+0300 lvl=info msg=end pg=/api/tunnels id=508d99efcb6f4b06 status=200 dur=85.361µs
+t=2026-10-16T04:10:16+0300 lvl=eror msg="heartbeat timeout, terminating session" obj=tunnels.session obj=csess id=966dbdcd483c clientid=034f3ad17827d0d63dda33ceaf64cd9a
+t=2026-10-16T04:10:16+0300 lvl=eror msg="session closed, starting reconnect loop" obj=tunnels.session obj=csess id=114b35abd7ef err="session closed"
+t=2026-10-16T04:10:17+0300 lvl=info msg="client session established" obj=tunnels.session
+t=2026-10-16T04:10:17+0300 lvl=info msg="tunnel session started" obj=tunnels.session
+t=2026-10-16T04:40:30+0300 lvl=info msg=start pg=/api/tunnels id=c943e33c0d382348
+t=2026-10-16T04:40:30+0300 lvl=info msg=end pg=/api/tunnels id=c943e33c0d382348 status=200 dur=18.084599ms
+t=2026-10-16T04:58:15+0300 lvl=info msg="join connections" obj=join id=b0e951a74f1a l=127.0.0.1:5173 r=196.188.230.107:7688
+t=2026-10-16T05:43:33+0300 lvl=info msg="no configuration paths supplied"
+t=2026-10-16T05:43:33+0300 lvl=info msg="using configuration at default config path" path=/home/musie/.config/ngrok/ngrok.yml
+t=2026-10-16T05:43:33+0300 lvl=info msg="open config file" path=/home/musie/.config/ngrok/ngrok.yml err=<nil>
+t=2026-10-16T05:43:33+0300 lvl=info msg="FIPS 140 mode" enabled=false
+t=2026-10-16T05:43:33+0300 lvl=info msg="starting web service" obj=web addr=127.0.0.1:4040 allow_hosts=[]
+t=2026-10-16T05:43:34+0300 lvl=info msg=start pg=/api/tunnels id=ed81eeb34b2f94d9
+t=2026-10-16T05:43:34+0300 lvl=info msg=end pg=/api/tunnels id=ed81eeb34b2f94d9 status=200 dur=271.899µs
+t=2026-10-16T05:43:34+0300 lvl=info msg="client session established" obj=tunnels.session
+t=2026-10-16T05:43:34+0300 lvl=info msg="tunnel session started" obj=tunnels.session
+t=2026-10-16T05:43:34+0300 lvl=info msg="started tunnel" obj=tunnels name=command_line addr=http://localhost:5173 url=https://burl-postcritical-gerald.ngrok-free.dev
+t=2026-10-16T05:43:35+0300 lvl=info msg=start pg=/api/tunnels id=eaedcb5db2d89924
+t=2026-10-16T05:43:35+0300 lvl=info msg=end pg=/api/tunnels id=eaedcb5db2d89924 status=200 dur=70.527µs
+t=2026-10-16T05:51:48+0300 lvl=info msg=start pg=/api/tunnels id=f20e2285d506e917
+t=2026-10-16T05:51:48+0300 lvl=info msg=end pg=/api/tunnels id=f20e2285d506e917 status=200 dur=341.598µs
+t=2026-10-16T05:54:04+0300 lvl=info msg="join connections" obj=join id=a977a5f09896 l=127.0.0.1:5173 r=196.188.230.107:7796
+t=2026-10-16T05:56:28+0300 lvl=info msg="join connections" obj=join id=5c5bb29bc9a7 l=127.0.0.1:5173 r=196.188.230.107:7900
+t=2026-10-16T05:56:28+0300 lvl=info msg="join connections" obj=join id=4bf0f252a6f8 l=127.0.0.1:5173 r=196.188.230.107:7900
+t=2026-10-16T05:56:28+0300 lvl=info msg="join connections" obj=join id=0f53aa627ab0 l=127.0.0.1:5173 r=196.188.230.107:7900
+t=2026-10-16T05:56:29+0300 lvl=info msg="join connections" obj=join id=4b8241ea3004 l=127.0.0.1:5173 r=196.188.230.107:7900
+t=2026-10-16T05:56:30+0300 lvl=info msg="join connections" obj=join id=469867daaec1 l=127.0.0.1:5173 r=196.188.230.107:7900
+t=2026-10-16T05:56:30+0300 lvl=info msg="join connections" obj=join id=50c27546dba7 l=127.0.0.1:5173 r=196.188.230.107:7900
+t=2026-10-16T05:56:30+0300 lvl=info msg="join connections" obj=join id=1f5048d28b0a l=127.0.0.1:5173 r=196.188.230.107:7900
+t=2026-10-16T05:56:30+0300 lvl=info msg="join connections" obj=join id=dfec91c47475 l=127.0.0.1:5173 r=196.188.230.107:7900
+t=2026-10-16T05:56:37+0300 lvl=info msg="join connections" obj=join id=b387f12229f1 l=127.0.0.1:5173 r=196.188.230.107:7900
+t=2026-10-16T05:56:37+0300 lvl=info msg="join connections" obj=join id=6130f7509681 l=127.0.0.1:5173 r=196.188.230.107:7900
+t=2026-10-16T05:56:37+0300 lvl=info msg="join connections" obj=join id=9f9c62d3c8ec l=127.0.0.1:5173 r=196.188.230.107:7900
+t=2026-10-16T05:56:37+0300 lvl=info msg="join connections" obj=join id=c256ee74ae48 l=127.0.0.1:5173 r=196.188.230.107:7900
+t=2026-10-16T05:56:37+0300 lvl=info msg="join connections" obj=join id=7dcdb32d7643 l=127.0.0.1:5173 r=196.188.230.107:7900
+t=2026-10-16T05:56:38+0300 lvl=info msg="join connections" obj=join id=c1fbb7caa81f l=127.0.0.1:5173 r=196.188.230.107:7927
+t=2026-10-16T05:56:39+0300 lvl=info msg="join connections" obj=join id=7616350f1100 l=127.0.0.1:5173 r=196.188.230.107:7900
+t=2026-10-16T05:56:39+0300 lvl=info msg="join connections" obj=join id=5a3eb5e51aeb l=127.0.0.1:5173 r=196.188.230.107:7900
+t=2026-10-16T05:56:46+0300 lvl=info msg="join connections" obj=join id=395445eb3c40 l=127.0.0.1:5173 r=196.188.230.107:7900
+t=2026-10-16T05:58:45+0300 lvl=info msg="join connections" obj=join id=df94f4a56db0 l=127.0.0.1:5173 r=196.188.230.107:7900
+t=2026-10-16T05:58:45+0300 lvl=info msg="join connections" obj=join id=7479ee904537 l=127.0.0.1:5173 r=196.188.230.107:7900
+t=2026-10-16T05:59:40+0300 lvl=info msg="join connections" obj=join id=012becd8bff7 l=127.0.0.1:5173 r=196.188.230.107:7900
+t=2026-10-16T05:59:41+0300 lvl=info msg="join connections" obj=join id=51c0e056edd0 l=127.0.0.1:5173 r=196.188.230.107:7900
+t=2026-10-16T05:59:41+0300 lvl=info msg="join connections" obj=join id=585a8f74a3ed l=127.0.0.1:5173 r=196.188.230.107:7900
+t=2026-10-16T05:59:41+0300 lvl=info msg="join connections" obj=join id=5868aa3daee1 l=127.0.0.1:5173 r=196.188.230.107:7900
+t=2026-10-16T05:59:41+0300 lvl=info msg="join connections" obj=join id=4701f7b6beb7 l=127.0.0.1:5173 r=196.188.230.107:7900
+t=2026-10-16T05:59:42+0300 lvl=info msg="join connections" obj=join id=cde8febdf772 l=127.0.0.1:5173 r=196.188.230.107:7900
+t=2026-10-16T05:59:42+0300 lvl=info msg="join connections" obj=join id=6af051924b77 l=127.0.0.1:5173 r=196.188.230.107:7900
+t=2026-10-16T05:59:42+0300 lvl=info msg="join connections" obj=join id=eb348ac684bf l=127.0.0.1:5173 r=196.188.230.107:7900
+t=2026-10-16T05:59:42+0300 lvl=info msg="join connections" obj=join id=1a5e1d42459c l=127.0.0.1:5173 r=196.188.230.107:8030
+t=2026-10-16T05:59:42+0300 lvl=info msg="join connections" obj=join id=7e5ff81c4c21 l=127.0.0.1:5173 r=196.188.230.107:7900
+t=2026-10-16T05:59:42+0300 lvl=info msg="join connections" obj=join id=debdda7d19f7 l=127.0.0.1:5173 r=196.188.230.107:7900
+t=2026-10-16T05:59:47+0300 lvl=info msg="join connections" obj=join id=6d02ede8f8ed l=127.0.0.1:5173 r=196.188.230.107:7900
+t=2026-10-16T05:59:47+0300 lvl=info msg="join connections" obj=join id=66a70a5aa400 l=127.0.0.1:5173 r=196.188.230.107:7900
+t=2026-10-16T05:59:47+0300 lvl=info msg="join connections" obj=join id=f1931bb9c9c7 l=127.0.0.1:5173 r=196.188.230.107:7900
+t=2026-10-16T05:59:48+0300 lvl=info msg="join connections" obj=join id=9fc807db6983 l=127.0.0.1:5173 r=196.188.230.107:7900
+t=2026-10-16T05:59:48+0300 lvl=info msg="join connections" obj=join id=4100140c325a l=127.0.0.1:5173 r=196.188.230.107:7900
+t=2026-10-16T05:59:48+0300 lvl=info msg="join connections" obj=join id=ab45227319cf l=127.0.0.1:5173 r=196.188.230.107:7900
+t=2026-10-16T05:59:48+0300 lvl=info msg="join connections" obj=join id=855021ee744a l=127.0.0.1:5173 r=196.188.230.107:8033
+t=2026-10-16T05:59:48+0300 lvl=info msg="join connections" obj=join id=b2629e643f8a l=127.0.0.1:5173 r=196.188.230.107:7900
+t=2026-10-16T05:59:48+0300 lvl=info msg="join connections" obj=join id=eafd8cc59a1a l=127.0.0.1:5173 r=196.188.230.107:7900
+t=2026-10-16T06:13:41+0300 lvl=info msg="no configuration paths supplied"
+t=2026-10-16T06:13:41+0300 lvl=info msg="using configuration at default config path" path=/home/musie/.config/ngrok/ngrok.yml
+t=2026-10-16T06:13:41+0300 lvl=info msg="open config file" path=/home/musie/.config/ngrok/ngrok.yml err=<nil>
+t=2026-10-16T06:13:41+0300 lvl=info msg="FIPS 140 mode" enabled=false
+t=2026-10-16T06:13:41+0300 lvl=info msg="starting web service" obj=web addr=127.0.0.1:4040 allow_hosts=[]
+t=2026-10-16T06:13:41+0300 lvl=info msg=start pg=/api/tunnels id=731f15580175c2f9
+t=2026-10-16T06:13:41+0300 lvl=info msg=end pg=/api/tunnels id=731f15580175c2f9 status=200 dur=418.184µs
+t=2026-10-16T06:13:41+0300 lvl=info msg="client session established" obj=tunnels.session
+t=2026-10-16T06:13:41+0300 lvl=info msg="tunnel session started" obj=tunnels.session
+t=2026-10-16T06:13:42+0300 lvl=info msg="started tunnel" obj=tunnels name=command_line addr=http://localhost:5173 url=https://burl-postcritical-gerald.ngrok-free.dev
+t=2026-10-16T06:13:42+0300 lvl=info msg=start pg=/api/tunnels id=dea25c2bbb336392
+t=2026-10-16T06:13:42+0300 lvl=info msg=end pg=/api/tunnels id=dea25c2bbb336392 status=200 dur=115.188µs
+t=2026-10-16T06:14:22+0300 lvl=info msg="join connections" obj=join id=289381adf8c2 l=127.0.0.1:5173 r=196.188.230.107:7866
+t=2026-10-16T06:14:23+0300 lvl=info msg="join connections" obj=join id=f398bdf8eb5a l=127.0.0.1:5173 r=196.188.230.107:7866
+t=2026-10-16T06:14:23+0300 lvl=info msg="join connections" obj=join id=d09ce1672a3e l=127.0.0.1:5173 r=196.188.230.107:7866
+t=2026-10-16T06:14:23+0300 lvl=info msg="join connections" obj=join id=fae1f7573d10 l=127.0.0.1:5173 r=196.188.230.107:7866
+t=2026-10-16T06:14:23+0300 lvl=info msg="join connections" obj=join id=bbbb1a7d4148 l=127.0.0.1:5173 r=196.188.230.107:7866
+t=2026-10-16T06:14:23+0300 lvl=info msg="join connections" obj=join id=cc80cd51a1ca l=127.0.0.1:5173 r=196.188.230.107:7866
+t=2026-10-16T06:14:23+0300 lvl=info msg="join connections" obj=join id=9220872a7faf l=127.0.0.1:5173 r=196.188.230.107:7866
+t=2026-10-16T06:14:24+0300 lvl=info msg="join connections" obj=join id=8696a309023a l=127.0.0.1:5173 r=196.188.230.107:7866
+t=2026-10-16T06:14:24+0300 lvl=info msg="join connections" obj=join id=55d24fbad3c7 l=127.0.0.1:5173 r=196.188.230.107:7866
+t=2026-10-16T06:14:24+0300 lvl=info msg="join connections" obj=join id=ea2b1eb9ced7 l=127.0.0.1:5173 r=196.188.230.107:7866
+t=2026-10-16T06:14:24+0300 lvl=info msg="join connections" obj=join id=d8781c015b7e l=127.0.0.1:5173 r=196.188.230.107:7879
+t=2026-10-16T06:15:53+0300 lvl=info msg="join connections" obj=join id=35537d063bd3 l=127.0.0.1:5173 r=196.188.230.107:7866
+t=2026-10-16T06:20:52+0300 lvl=info msg="no configuration paths supplied"
+t=2026-10-16T06:20:52+0300 lvl=info msg="using configuration at default config path" path=/home/musie/.config/ngrok/ngrok.yml
+t=2026-10-16T06:20:52+0300 lvl=info msg="open config file" path=/home/musie/.config/ngrok/ngrok.yml err=<nil>
+t=2026-10-16T06:20:52+0300 lvl=info msg="FIPS 140 mode" enabled=false
+t=2026-10-16T06:20:52+0300 lvl=info msg="starting web service" obj=web addr=127.0.0.1:4040 allow_hosts=[]
+t=2026-10-16T06:20:53+0300 lvl=info msg="client session established" obj=tunnels.session
+t=2026-10-16T06:20:53+0300 lvl=info msg="tunnel session started" obj=tunnels.session
+t=2026-10-16T06:20:53+0300 lvl=info msg=start pg=/api/tunnels id=1d8b464dc4cfd6c7
+t=2026-10-16T06:20:53+0300 lvl=info msg=end pg=/api/tunnels id=1d8b464dc4cfd6c7 status=200 dur=328.073µs
+t=2026-10-16T06:20:53+0300 lvl=info msg="started tunnel" obj=tunnels name=command_line addr=http://localhost:5173 url=https://burl-postcritical-gerald.ngrok-free.dev
+t=2026-10-16T06:20:54+0300 lvl=info msg=start pg=/api/tunnels id=a72fe51ab216f7d4
+t=2026-10-16T06:20:54+0300 lvl=info msg=end pg=/api/tunnels id=a72fe51ab216f7d4 status=200 dur=442.771µs
+t=2026-10-16T06:21:14+0300 lvl=info msg="join connections" obj=join id=91cf4a2f59f3 l=127.0.0.1:5173 r=196.188.230.107:7560
+t=2026-10-16T06:21:14+0300 lvl=info msg="join connections" obj=join id=a743ef9a4d79 l=127.0.0.1:5173 r=196.188.230.107:7560
+t=2026-10-16T06:21:14+0300 lvl=info msg="join connections" obj=join id=b52bc5a38d25 l=127.0.0.1:5173 r=196.188.230.107:7560
+t=2026-10-16T06:21:15+0300 lvl=info msg="join connections" obj=join id=0d92682baac0 l=127.0.0.1:5173 r=196.188.230.107:7560
+t=2026-10-16T06:21:15+0300 lvl=info msg="join connections" obj=join id=30baec934254 l=127.0.0.1:5173 r=196.188.230.107:7560
+t=2026-10-16T06:21:15+0300 lvl=info msg="join connections" obj=join id=5ed082f08092 l=127.0.0.1:5173 r=196.188.230.107:7560
+t=2026-10-16T06:21:15+0300 lvl=info msg="join connections" obj=join id=89f7a54d6734 l=127.0.0.1:5173 r=196.188.230.107:7560
+t=2026-10-16T06:21:15+0300 lvl=info msg="join connections" obj=join id=4995d887096c l=127.0.0.1:5173 r=196.188.230.107:7560
+t=2026-10-16T06:21:16+0300 lvl=info msg="join connections" obj=join id=1439f49700cb l=127.0.0.1:5173 r=196.188.230.107:7560
+t=2026-10-16T06:21:16+0300 lvl=info msg="join connections" obj=join id=a8c91d033364 l=127.0.0.1:5173 r=196.188.230.107:7568
+t=2026-10-16T06:21:33+0300 lvl=info msg="join connections" obj=join id=852e98529cce l=127.0.0.1:5173 r=196.188.230.107:7560
+t=2026-10-16T06:22:47+0300 lvl=info msg="join connections" obj=join id=f520a5c8fb4c l=127.0.0.1:5173 r=196.188.230.107:7560
+t=2026-10-16T06:22:48+0300 lvl=info msg="join connections" obj=join id=e133f3454b4b l=127.0.0.1:5173 r=196.188.230.107:7560
+t=2026-10-16T06:22:48+0300 lvl=info msg="join connections" obj=join id=5041cab58c00 l=127.0.0.1:5173 r=196.188.230.107:7560
+t=2026-10-16T06:22:48+0300 lvl=info msg="join connections" obj=join id=4b0fa7ede507 l=127.0.0.1:5173 r=196.188.230.107:7560
+t=2026-10-16T06:22:48+0300 lvl=info msg="join connections" obj=join id=27db375e2613 l=127.0.0.1:5173 r=196.188.230.107:7560
+t=2026-10-16T06:22:48+0300 lvl=info msg="join connections" obj=join id=c31ae7581558 l=127.0.0.1:5173 r=196.188.230.107:7560
+t=2026-10-16T06:22:48+0300 lvl=info msg="join connections" obj=join id=ceb3689a51b2 l=127.0.0.1:5173 r=196.188.230.107:7560
+t=2026-10-16T06:22:48+0300 lvl=info msg="join connections" obj=join id=9925e4472955 l=127.0.0.1:5173 r=196.188.230.107:7560
+t=2026-10-16T06:22:48+0300 lvl=info msg="join connections" obj=join id=0235bf194c82 l=127.0.0.1:5173 r=196.188.230.107:7560
+t=2026-10-16T06:22:48+0300 lvl=info msg="join connections" obj=join id=4a558d5cff46 l=127.0.0.1:5173 r=196.188.230.107:7606
+t=2026-10-16T06:22:59+0300 lvl=info msg="join connections" obj=join id=9c81b2aae88b l=127.0.0.1:5173 r=196.188.230.107:7560
+t=2026-10-16T06:23:00+0300 lvl=info msg="join connections" obj=join id=a446be0c18dd l=127.0.0.1:5173 r=196.188.230.107:7560
+t=2026-10-16T06:23:00+0300 lvl=info msg="join connections" obj=join id=da490c2da2fe l=127.0.0.1:5173 r=196.188.230.107:7560
+t=2026-10-16T06:23:00+0300 lvl=info msg="join connections" obj=join id=2ec74d72785c l=127.0.0.1:5173 r=196.188.230.107:7560
+t=2026-10-16T06:23:00+0300 lvl=info msg="join connections" obj=join id=b45dd12e153e l=127.0.0.1:5173 r=196.188.230.107:7560
+t=2026-10-16T06:23:00+0300 lvl=info msg="join connections" obj=join id=7397fd39fd48 l=127.0.0.1:5173 r=196.188.230.107:7560
+t=2026-10-16T06:23:00+0300 lvl=info msg="join connections" obj=join id=ab1b0c54295a l=127.0.0.1:5173 r=196.188.230.107:7560
+t=2026-10-16T06:23:00+0300 lvl=info msg="join connections" obj=join id=b79d53fe3b7c l=127.0.0.1:5173 r=196.188.230.107:7560
+t=2026-10-16T06:23:00+0300 lvl=info msg="join connections" obj=join id=1c1d2029da52 l=127.0.0.1:5173 r=196.188.230.107:7560
+t=2026-10-16T06:23:00+0300 lvl=info msg="join connections" obj=join id=42d6385a54a0 l=127.0.0.1:5173 r=196.188.230.107:7560
+t=2026-10-16T06:23:00+0300 lvl=info msg="join connections" obj=join id=ff066cdf561b l=127.0.0.1:5173 r=196.188.230.107:7610

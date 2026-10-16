@@ -14,8 +14,6 @@ type Props = Readonly<{
   onSuccess: (orderId: string) => void;
 }>;
 
-import type { TgWebApp } from "../lib/telegram";
-
 const formatPrice = (n: number) => `${n.toLocaleString("en-US")} ETB`;
 
 const cleanPhone = (val: string) => val.replace(/[^\d+]/g, "");
@@ -32,25 +30,17 @@ const validateCheckoutForm = (
   landmark: string,
 ): string | null => {
   if (!phone.trim()) {
-    return "ስልክ ቁጥር ያስገቡ · Please enter phone number";
+    return "Please enter your phone number";
   }
   if (!isValidEthiopianPhone(phone)) {
-    return "ትክክለኛ ስልክ ቁጥር ያስገቡ · Enter valid phone (09/07)";
+    return "Please enter a valid phone number (09... or 07...)";
   }
   if (fulfillment === "courier_delivery" && !landmark.trim()) {
-    return "መለያ ቦታ / አድራሻ ያስገቡ · Enter delivery landmark";
+    return "Please enter a delivery landmark or address";
   }
   return null;
 };
 
-const openCheckoutUrl = (url: string | undefined, webApp: TgWebApp | null): void => {
-  if (!url) return;
-  if (webApp?.openLink) {
-    webApp.openLink(url);
-  } else {
-    window.open(url, "_blank");
-  }
-};
 
 const extractPriceDrift = (err: unknown): number | null => {
   if (typeof err === "object" && err !== null && "details" in err) {
@@ -142,7 +132,6 @@ export default function CheckoutPage({
 
       haptics?.notificationOccurred?.("success");
       tma.info("checkout session created", res);
-      openCheckoutUrl(res.checkoutUrl, webApp);
       onSuccess(res.orderId);
     } catch (err: unknown) {
       tma.error("checkout error:", err);
@@ -152,7 +141,7 @@ export default function CheckoutPage({
         haptics?.notificationOccurred?.("warning");
       } else {
         const msg = err instanceof Error ? err.message : String(err);
-        showToast(msg || "Checkout failed · እባክዎ እንደገና ይሞክሩ", "err");
+        showToast(msg || "Checkout failed. Please try again.", "err");
       }
     } finally {
       setIsSubmitting(false);
@@ -172,23 +161,23 @@ export default function CheckoutPage({
           }}
           aria-label="Back"
         >
-          ← ተመለስ · Back
+          ← Back
         </button>
-        <span className="checkout__nav-title">ትዕዛዝ ማጠናቀቂያ · Checkout</span>
-        <span className="checkout__badge-secure">ደህንነቱ የተጠበቀ · 100% Safe</span>
+        <span className="checkout__nav-title">Checkout</span>
+        <span className="checkout__badge-secure">100% Secure</span>
       </header>
 
       <main className="checkout__container">
         {/* Hero Title */}
         <div className="checkout__hero stagger" style={{ animationDelay: "40ms" }}>
-          <h1 className="checkout__heading">ክፍያ እና ማድረሻ</h1>
+          <h1 className="checkout__heading">Payment & Delivery</h1>
           <p className="checkout__subheading">Review your order details and confirm delivery.</p>
         </div>
 
         {/* 1. Order Summary Card */}
         <section className="checkout__card stagger" style={{ animationDelay: "90ms" }}>
           <div className="checkout__section-title">
-            <span className="checkout__label">የተመረጠ ምርት · ORDER ITEM</span>
+            <span className="checkout__label">ORDER ITEM</span>
           </div>
 
           <div className="checkout__summary-item">
@@ -203,8 +192,8 @@ export default function CheckoutPage({
             <div className="checkout__summary-details">
               <h2 className="checkout__summary-name">{product.title}</h2>
               <div className="checkout__summary-meta">
-                <span className="checkout__pill-variant">መጠን · {selectedVariant}</span>
-                <span className="checkout__summary-qty">ብዛት: {quantity}</span>
+                <span className="checkout__pill-variant">Variant: {selectedVariant}</span>
+                <span className="checkout__summary-qty">Qty: {quantity}</span>
               </div>
               <div className="checkout__summary-price">{formatPrice(subtotal)}</div>
             </div>
@@ -214,7 +203,7 @@ export default function CheckoutPage({
         {/* 2. Fulfillment Method Selector */}
         <section className="checkout__card stagger" style={{ animationDelay: "140ms" }}>
           <div className="checkout__section-title">
-            <span className="checkout__label">የማድረሻ ዘዴ · FULFILLMENT METHOD</span>
+            <span className="checkout__label">FULFILLMENT METHOD</span>
           </div>
 
           <div className="checkout__toggle-group" role="radiogroup">
@@ -237,8 +226,8 @@ export default function CheckoutPage({
                   <div className="checkout__toggle-radio-dot" />
                 </div>
               </div>
-              <div className="checkout__toggle-title">መደብር መውሰድ</div>
-              <div className="checkout__toggle-sub">Store Pickup (Free)</div>
+              <div className="checkout__toggle-title">In-Store Pickup</div>
+              <div className="checkout__toggle-sub">Free Store Pickup</div>
             </button>
 
             {/* Courier Delivery */}
@@ -260,8 +249,8 @@ export default function CheckoutPage({
                   <div className="checkout__toggle-radio-dot" />
                 </div>
               </div>
-              <div className="checkout__toggle-title">በተላላኪ ማድረስ</div>
-              <div className="checkout__toggle-sub">Courier Delivery (+150 ETB)</div>
+              <div className="checkout__toggle-title">Courier Delivery</div>
+              <div className="checkout__toggle-sub">+150 ETB delivery fee</div>
             </button>
           </div>
 
@@ -270,10 +259,8 @@ export default function CheckoutPage({
             <div className="checkout__pickup-info">
               <span className="checkout__pickup-icon">📍</span>
               <p className="checkout__pickup-text">
-                <strong>አድራሻ · Boutique Pickup:</strong>
-                ቦሌ መድኃኔዓለም፣ ኤድና ሞል ፊት ለፊት · ክፍት ሰዓት: 3:00 - 12:00
-                <br />
-                Bole Medhanialem, opposite Edna Mall (Open Mon-Sat 9AM-6PM)
+                <strong>Boutique Pickup:</strong>{" "}
+                Bole Medhanialem, opposite Edna Mall (Open Mon-Sat 9:00 AM - 6:00 PM)
               </p>
             </div>
           ) : (
@@ -281,7 +268,7 @@ export default function CheckoutPage({
               {/* Subcity Selector */}
               <div className="checkout__field">
                 <label htmlFor="subcity-select" className="checkout__field-label">
-                  ክፍለ ከተማ · SUBCITY
+                  SUBCITY
                 </label>
                 <select
                   id="subcity-select"
@@ -294,7 +281,7 @@ export default function CheckoutPage({
                 >
                   {ADDIS_SUBCITIES.map((sub) => (
                     <option key={sub.en} value={sub.en}>
-                      {sub.am} · {sub.en}
+                      {sub.en}
                     </option>
                   ))}
                 </select>
@@ -303,13 +290,13 @@ export default function CheckoutPage({
               {/* Landmark / Delivery Address */}
               <div className="checkout__field">
                 <label htmlFor="landmark-input" className="checkout__field-label">
-                  መለያ ቦታ / አድራሻ · LANDMARK & ADDRESS
+                  LANDMARK & ADDRESS
                 </label>
                 <input
                   id="landmark-input"
                   type="text"
                   className="checkout__input"
-                  placeholder="ለምሳሌ፡ ኤድና ሞል አጠገብ፣ ቤት ቁጥር 204"
+                  placeholder="e.g. Near Edna Mall, House No. 204"
                   value={landmark}
                   onChange={(e) => setLandmark(e.target.value)}
                 />
@@ -324,12 +311,12 @@ export default function CheckoutPage({
         {/* 3. Contact Phone Number */}
         <section className="checkout__card stagger" style={{ animationDelay: "190ms" }}>
           <div className="checkout__section-title">
-            <span className="checkout__label">የእውቂያ መረጃ · CONTACT INFO</span>
+            <span className="checkout__label">CONTACT INFO</span>
           </div>
 
           <div className="checkout__field" style={{ marginTop: 0 }}>
             <label htmlFor="phone-input" className="checkout__field-label">
-              ስልክ ቁጥር · PHONE NUMBER
+              PHONE NUMBER
             </label>
             <div className="checkout__input-wrap">
               <input
@@ -337,7 +324,7 @@ export default function CheckoutPage({
                 type="tel"
                 inputMode="tel"
                 className="checkout__input"
-                placeholder="09... ወይም 07... / +251..."
+                placeholder="09... or 07... / +251..."
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
               />
@@ -351,27 +338,27 @@ export default function CheckoutPage({
         {/* 4. Payment Breakdown */}
         <section className="checkout__card stagger" style={{ animationDelay: "240ms" }}>
           <div className="checkout__section-title">
-            <span className="checkout__label">የክፍያ ዝርዝር · PAYMENT BREAKDOWN</span>
+            <span className="checkout__label">PAYMENT BREAKDOWN</span>
           </div>
 
           <div className="checkout__breakdown">
             <div className="checkout__breakdown-row">
-              <span>የእቃ ዋጋ · Subtotal</span>
+              <span>Subtotal</span>
               <span>{formatPrice(subtotal)}</span>
             </div>
             <div className="checkout__breakdown-row">
-              <span>የማድረሻ ክፍያ · Delivery</span>
-              <span>{deliveryFee === 0 ? "ነፃ · FREE" : formatPrice(deliveryFee)}</span>
+              <span>Delivery</span>
+              <span>{deliveryFee === 0 ? "FREE" : formatPrice(deliveryFee)}</span>
             </div>
             <div className="checkout__breakdown-divider" />
             <div className="checkout__breakdown-row checkout__breakdown-row--total">
-              <span>ጠቅላላ ክፍያ · Total</span>
+              <span>Total</span>
               <span>{formatPrice(totalAmount)}</span>
             </div>
           </div>
 
           <div className="checkout__gateways">
-            <span className="checkout__gateways-label">ክፍያ በ BirrJS የተደገፈ</span>
+            <span className="checkout__gateways-label">Payments powered by BirrJS</span>
             <div className="checkout__gateways-tags">
               <span className="checkout__gateway-tag">Telebirr</span>
               <span className="checkout__gateway-tag">CBE Birr</span>
@@ -390,9 +377,9 @@ export default function CheckoutPage({
           disabled={isSubmitting}
         >
           <div className="checkout__cta-text">
-            <span className="checkout__cta-kicker">ትዕዛዝ አረጋግጥ · CONFIRM & PAY</span>
+            <span className="checkout__cta-kicker">CONFIRM & PAY</span>
             <span className="checkout__cta-main">
-              {isSubmitting ? "በማስኬድ ላይ…" : "ክፍያ ፈጽም · Proceed to Payment"}
+              {isSubmitting ? "Processing…" : "Proceed to Payment"}
             </span>
           </div>
           {isSubmitting ? (
@@ -414,13 +401,10 @@ export default function CheckoutPage({
       {priceDrift && (
         <dialog className="checkout__modal-backdrop" open aria-modal="true">
           <div className="checkout__modal">
-            <h2 className="checkout__modal-title">የዋጋ ለውጥ · Price Updated</h2>
+            <h2 className="checkout__modal-title">Price Updated</h2>
             <p className="checkout__modal-desc">
-              የምርቱ ዋጋ ከ <strong>{formatPrice(priceDrift.oldPrice)}</strong> ወደ{" "}
-              <strong>{formatPrice(priceDrift.newPrice)}</strong> ተቀይሯል። በዚህ ዋጋ መቀጠል ይፈልጋሉ?
-              <br />
-              (The catalog price changed to {formatPrice(priceDrift.newPrice)}. Do you want to
-              proceed?)
+              The item price has changed from <strong>{formatPrice(priceDrift.oldPrice)}</strong> to{" "}
+              <strong>{formatPrice(priceDrift.newPrice)}</strong>. Would you like to proceed with the updated price?
             </p>
             <div className="checkout__modal-actions">
               <button
@@ -428,7 +412,7 @@ export default function CheckoutPage({
                 className="checkout__modal-btn checkout__modal-btn--cancel"
                 onClick={() => setPriceDrift(null)}
               >
-                ይቅር · Cancel
+                Cancel
               </button>
               <button
                 type="button"
@@ -438,7 +422,7 @@ export default function CheckoutPage({
                   void handleSubmit(true);
                 }}
               >
-                እሺ፣ ቀጥል · Accept & Pay
+                Accept & Pay
               </button>
             </div>
           </div>

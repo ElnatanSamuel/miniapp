@@ -21,7 +21,7 @@ export default function SuccessPage({ orderId, onDone }: Props) {
   return (
     <div className="checkout" style={{ minHeight: "100dvh", display: "flex", flexDirection: "column" }}>
       <header className="checkout__nav">
-        <span className="checkout__nav-title">ትዕዛዝ ተጠናቋል · Order Confirmed</span>
+        <span className="checkout__nav-title">Order Confirmed</span>
       </header>
 
       <main
@@ -31,7 +31,7 @@ export default function SuccessPage({ orderId, onDone }: Props) {
         <div className="checkout__card stagger" style={{ maxWidth: "420px", width: "100%", padding: "36px 24px" }}>
           <div style={{ fontSize: "52px", marginBottom: "16px" }}>🎉</div>
           <h1 className="checkout__heading" style={{ fontSize: "26px", marginBottom: "8px" }}>
-            ትዕዛዝዎ ተቀብለናል!
+            Order Confirmed!
           </h1>
           <p className="checkout__subheading" style={{ fontSize: "14.5px", marginBottom: "20px" }}>
             Thank you! Your order has been placed successfully.
@@ -54,8 +54,6 @@ export default function SuccessPage({ orderId, onDone }: Props) {
           </div>
 
           <p style={{ fontSize: "13.5px", color: "var(--muted)", lineHeight: 1.5, margin: "0 0 24px" }}>
-            የክፍያ እና የማድረሻ ማረጋገጫ በቴሌግራም መልእክት ይላክልዎታል።
-            <br />
             A payment and delivery status confirmation has been sent to your Telegram.
           </p>
 
@@ -68,7 +66,7 @@ export default function SuccessPage({ orderId, onDone }: Props) {
               onDone();
             }}
           >
-            ወደ መደብር ተመለስ · Back to Shop
+            Back to Shop
           </button>
         </div>
       </main>
