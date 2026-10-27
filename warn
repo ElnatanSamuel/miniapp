@@ -693,3 +693,23 @@ t=2026-10-16T06:23:00+0300 lvl=info msg="join connections" obj=join id=b79d53fe3
 t=2026-10-16T06:23:00+0300 lvl=info msg="join connections" obj=join id=1c1d2029da52 l=127.0.0.1:5173 r=196.188.230.107:7560
 t=2026-10-16T06:23:00+0300 lvl=info msg="join connections" obj=join id=42d6385a54a0 l=127.0.0.1:5173 r=196.188.230.107:7560
 t=2026-10-16T06:23:00+0300 lvl=info msg="join connections" obj=join id=ff066cdf561b l=127.0.0.1:5173 r=196.188.230.107:7610
+t=2026-10-27T05:02:40+0300 lvl=info msg="no configuration paths supplied"
+t=2026-10-27T05:02:40+0300 lvl=info msg="using configuration at default config path" path=/home/musie/.config/ngrok/ngrok.yml
+t=2026-10-27T05:02:40+0300 lvl=info msg="open config file" path=/home/musie/.config/ngrok/ngrok.yml err=<nil>
+t=2026-10-27T05:02:40+0300 lvl=info msg="FIPS 140 mode" enabled=false
+t=2026-10-27T05:02:40+0300 lvl=info msg="starting web service" obj=web addr=127.0.0.1:4040 allow_hosts=[]
+t=2026-10-27T05:02:41+0300 lvl=info msg=start pg=/api/tunnels id=d795a233b9e26007
+t=2026-10-27T05:02:41+0300 lvl=info msg=end pg=/api/tunnels id=d795a233b9e26007 status=200 dur=439.685µs
+t=2026-10-27T05:02:41+0300 lvl=info msg="client session established" obj=tunnels.session
+t=2026-10-27T05:02:41+0300 lvl=info msg="tunnel session started" obj=tunnels.session
+t=2026-10-27T05:02:41+0300 lvl=info msg="started tunnel" obj=tunnels name=command_line addr=http://localhost:5173 url=https://burl-postcritical-gerald.ngrok-free.dev
+t=2026-10-27T05:02:41+0300 lvl=info msg="update available" obj=updater
+t=2026-10-27T05:02:42+0300 lvl=info msg=start pg=/api/tunnels id=eee5b439b7dd01b0
+t=2026-10-27T05:02:42+0300 lvl=info msg=end pg=/api/tunnels id=eee5b439b7dd01b0 status=200 dur=146.522µs
+t=2026-10-27T05:02:44+0300 lvl=info msg="Got quit command" obj=consoleui
+t=2026-10-27T05:02:44+0300 lvl=info msg="INFO received stop request obj=app stopReq=\"{err:<nil> restart:false}\""
+t=2026-10-27T05:02:44+0300 lvl=info msg="session closing" obj=tunnels.session err=<nil>
+t=2026-10-27T05:02:44+0300 lvl=info msg="accept failed" obj=tunnels.session obj=csess id=086214e7bbcf err="reconnecting session closed"
+t=2026-10-27T05:02:44+0300 lvl=info msg="no more state changes" obj=tunnels.session
+t=2026-10-27T05:02:44+0300 lvl=info msg="failed to accept connection: Listener closed" obj=tunnels.session clientid=d29561d6da3f2257fd6939e8ad6dfa68
+t=2026-10-27T05:02:44+0300 lvl=warn msg="Stopping forwarder" name=command_line acceptErr="failed to accept connection: Listener closed"

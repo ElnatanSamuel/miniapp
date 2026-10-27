@@ -3,7 +3,14 @@
 import { useRouter } from "next/navigation";
 import { Send, ShieldCheck, ShoppingBag } from "lucide-react";
 
-import { Button, Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui";
+import {
+  Button,
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui";
 import { APP_CONFIG } from "@/lib/utils";
 
 export default function LoginPage() {
@@ -21,7 +28,9 @@ export default function LoginPage() {
             <ShoppingBag className="size-6" />
           </div>
           <div>
-            <CardTitle className="text-2xl font-bold tracking-tight">{APP_CONFIG.name}</CardTitle>
+            <CardTitle className="text-2xl font-bold tracking-tight">
+              {APP_CONFIG.name}
+            </CardTitle>
             <CardDescription className="mt-1 text-sm">
               Merchant portal for Telegram channel owners in Addis Ababa
             </CardDescription>
@@ -34,8 +43,8 @@ export default function LoginPage() {
               <span>Zero-Touch Telegram Authentication</span>
             </div>
             <p>
-              Sign in with your Telegram account to manage your channel inventory, fulfill orders, and monitor BirrJS
-              payouts.
+              Sign in with your Telegram account to manage your channel
+              inventory, fulfill orders, and monitor BirrJS payouts.
             </p>
           </div>
 

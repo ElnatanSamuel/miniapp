@@ -47,17 +47,28 @@ import {
   TabsList,
   TabsTrigger,
 } from "@/components/ui";
-import { getOrderStats, getOrders, markOrderFulfilled, type OrderStats } from "@/lib/api";
+import {
+  getOrderStats,
+  getOrders,
+  markOrderFulfilled,
+  type OrderStats,
+} from "@/lib/api";
 import { formatAddisDate, formatETB, formatPhone } from "@/lib/utils";
 
 /* -------------------------------------------------------------------------
  * Orders Page Main Component
  * ------------------------------------------------------------------------- */
 export default function OrdersPage() {
-  const [activeTab, setActiveTab] = React.useState<"to_fulfill" | "completed" | "expired">("to_fulfill");
+  const [activeTab, setActiveTab] = React.useState<
+    "to_fulfill" | "completed" | "expired"
+  >("to_fulfill");
   const [orders, setOrders] = React.useState<Order[]>([]);
   const [stats, setStats] = React.useState<OrderStats | null>(null);
-  const [counts, setCounts] = React.useState({ to_fulfill: 0, completed: 0, expired: 0 });
+  const [counts, setCounts] = React.useState({
+    to_fulfill: 0,
+    completed: 0,
+    expired: 0,
+  });
   const [loading, setLoading] = React.useState(true);
   const [isRefreshing, setIsRefreshing] = React.useState(false);
 
@@ -72,13 +83,14 @@ export default function OrdersPage() {
       try {
         if (!isBackground) setIsRefreshing(true);
 
-        const [tabOrders, orderStats, allToFulfill, allCompleted, allExpired] = await Promise.all([
-          getOrders(activeTab),
-          getOrderStats(),
-          getOrders("to_fulfill"),
-          getOrders("completed"),
-          getOrders("expired"),
-        ]);
+        const [tabOrders, orderStats, allToFulfill, allCompleted, allExpired] =
+          await Promise.all([
+            getOrders(activeTab),
+            getOrderStats(),
+            getOrders("to_fulfill"),
+            getOrders("completed"),
+            getOrders("expired"),
+          ]);
 
         setOrders(tabOrders);
         setStats(orderStats);
@@ -89,7 +101,9 @@ export default function OrdersPage() {
         });
       } catch (err: unknown) {
         if (!isBackground) {
-          toast.error(err instanceof Error ? err.message : "Failed to load orders");
+          toast.error(
+            err instanceof Error ? err.message : "Failed to load orders",
+          );
         }
       } finally {
         setLoading(false);
@@ -117,13 +131,17 @@ export default function OrdersPage() {
     setOrders((prev) =>
       activeTab === "to_fulfill"
         ? prev.filter((o) => o.id !== orderId)
-        : prev.map((o) => (o.id === orderId ? { ...o, status: "fulfilled" } : o)),
+        : prev.map((o) =>
+            o.id === orderId ? { ...o, status: "fulfilled" } : o,
+          ),
     );
     setFulfillOpen(false);
 
     try {
       await markOrderFulfilled(orderId);
-      toast.success(`Order #${orderId} fulfilled! Telegram notification sent to customer.`);
+      toast.success(
+        `Order #${orderId} fulfilled! Telegram notification sent to customer.`,
+      );
       void fetchData(true);
     } catch {
       toast.error(`Failed to fulfill order #${orderId}`);
@@ -140,7 +158,8 @@ export default function OrdersPage() {
             Live Orders Board / ትዕዛዞች
           </h1>
           <p className="text-sm text-muted-foreground">
-            Customer checkouts from your Telegram Mini App. Refreshes automatically.
+            Customer checkouts from your Telegram Mini App. Refreshes
+            automatically.
           </p>
         </div>
         <Button
@@ -150,7 +169,9 @@ export default function OrdersPage() {
           disabled={isRefreshing}
           className="gap-2 self-start"
         >
-          <RefreshCw className={`size-3.5 ${isRefreshing ? "animate-spin" : ""}`} />
+          <RefreshCw
+            className={`size-3.5 ${isRefreshing ? "animate-spin" : ""}`}
+          />
           <span>Refresh / አድስ</span>
         </Button>
       </div>
@@ -174,8 +195,12 @@ export default function OrdersPage() {
               </div>
             </CardHeader>
             <CardContent>
-              <div className="text-2xl font-bold text-foreground">{stats.toFulfill}</div>
-              <p className="text-xs text-muted-foreground mt-1">Paid orders awaiting dispatch</p>
+              <div className="text-2xl font-bold text-foreground">
+                {stats.toFulfill}
+              </div>
+              <p className="text-xs text-muted-foreground mt-1">
+                Paid orders awaiting dispatch
+              </p>
             </CardContent>
           </Card>
 
@@ -189,8 +214,12 @@ export default function OrdersPage() {
               </div>
             </CardHeader>
             <CardContent>
-              <div className="text-2xl font-bold text-foreground">{formatETB(stats.revenueToday)}</div>
-              <p className="text-xs text-muted-foreground mt-1">Collected via Telebirr / CBE</p>
+              <div className="text-2xl font-bold text-foreground">
+                {formatETB(stats.revenueToday)}
+              </div>
+              <p className="text-xs text-muted-foreground mt-1">
+                Collected via Telebirr / CBE
+              </p>
             </CardContent>
           </Card>
 
@@ -204,8 +233,12 @@ export default function OrdersPage() {
               </div>
             </CardHeader>
             <CardContent>
-              <div className="text-2xl font-bold text-foreground">{formatETB(stats.revenueThisWeek)}</div>
-              <p className="text-xs text-muted-foreground mt-1">Last 7 calendar days</p>
+              <div className="text-2xl font-bold text-foreground">
+                {formatETB(stats.revenueThisWeek)}
+              </div>
+              <p className="text-xs text-muted-foreground mt-1">
+                Last 7 calendar days
+              </p>
             </CardContent>
           </Card>
 
@@ -219,8 +252,12 @@ export default function OrdersPage() {
               </div>
             </CardHeader>
             <CardContent>
-              <div className="text-2xl font-bold text-foreground">{stats.expiredHolds}</div>
-              <p className="text-xs text-muted-foreground mt-1">Unpaid after 15-min hold</p>
+              <div className="text-2xl font-bold text-foreground">
+                {stats.expiredHolds}
+              </div>
+              <p className="text-xs text-muted-foreground mt-1">
+                Unpaid after 15-min hold
+              </p>
             </CardContent>
           </Card>
         </div>
@@ -235,7 +272,10 @@ export default function OrdersPage() {
         <TabsList className="grid w-full grid-cols-3 sm:w-auto">
           <TabsTrigger value="to_fulfill" className="gap-1.5 font-medium">
             <span>To Fulfill</span>
-            <Badge variant="secondary" className="px-1.5 py-0 text-[11px] font-bold">
+            <Badge
+              variant="secondary"
+              className="px-1.5 py-0 text-[11px] font-bold"
+            >
               {counts.to_fulfill}
             </Badge>
           </TabsTrigger>
@@ -264,7 +304,9 @@ export default function OrdersPage() {
       ) : orders.length === 0 ? (
         <Card className="flex flex-col items-center justify-center p-12 text-center border-border/80">
           <Package className="size-12 text-muted-foreground/40 mb-3" />
-          <h3 className="text-base font-semibold text-foreground">No orders in this view</h3>
+          <h3 className="text-base font-semibold text-foreground">
+            No orders in this view
+          </h3>
           <p className="text-xs text-muted-foreground mt-1">
             {activeTab === "to_fulfill"
               ? "All paid orders have been fulfilled! New orders will arrive in real time."
@@ -342,7 +384,8 @@ export default function OrdersPage() {
                           }}
                           className="text-xs text-primary hover:underline font-medium cursor-pointer"
                         >
-                          {order.items.length} item{order.items.length > 1 ? "s" : ""}
+                          {order.items.length} item
+                          {order.items.length > 1 ? "s" : ""}
                         </button>
                       </TableCell>
 
@@ -354,7 +397,8 @@ export default function OrdersPage() {
                         <Badge
                           variant="outline"
                           className={
-                            order.status === "paid" || order.status === "fulfilled"
+                            order.status === "paid" ||
+                            order.status === "fulfilled"
                               ? "border-emerald-500/30 bg-emerald-500/10 text-emerald-400 font-medium text-[11px]"
                               : "border-destructive/30 bg-destructive/10 text-destructive font-medium text-[11px]"
                           }
@@ -412,7 +456,8 @@ export default function OrdersPage() {
                     variant="outline"
                     className="border-emerald-500/30 bg-emerald-500/10 text-emerald-400 font-medium text-[11px]"
                   >
-                    {order.paymentProvider ?? "Telebirr"} ● {formatETB(order.totalAmount)}
+                    {order.paymentProvider ?? "Telebirr"} ●{" "}
+                    {formatETB(order.totalAmount)}
                   </Badge>
                 </div>
 
@@ -472,7 +517,10 @@ export default function OrdersPage() {
 
       {/* Details Sheet Modal */}
       {selectedOrder && (
-        <Sheet open={detailsOpen} onOpenChange={(open) => !open && setDetailsOpen(false)}>
+        <Sheet
+          open={detailsOpen}
+          onOpenChange={(open) => !open && setDetailsOpen(false)}
+        >
           <SheetContent className="w-full sm:max-w-lg overflow-y-auto">
             <SheetHeader className="pb-4 border-b border-border">
               <div className="flex items-center justify-between">
@@ -482,7 +530,8 @@ export default function OrdersPage() {
                 <Badge
                   variant="outline"
                   className={
-                    selectedOrder.status === "paid" || selectedOrder.status === "fulfilled"
+                    selectedOrder.status === "paid" ||
+                    selectedOrder.status === "fulfilled"
                       ? "border-emerald-500/30 bg-emerald-500/10 text-emerald-400"
                       : "border-destructive/30 bg-destructive/10 text-destructive"
                   }
@@ -490,8 +539,8 @@ export default function OrdersPage() {
                   {selectedOrder.status === "paid"
                     ? "Paid ● Ready to Fulfill"
                     : selectedOrder.status === "fulfilled"
-                    ? "Fulfilled / ተጠናቋል"
-                    : "Expired / ጊዜ ያለፈበት"}
+                      ? "Fulfilled / ተጠናቋል"
+                      : "Expired / ጊዜ ያለፈበት"}
                 </Badge>
               </div>
               <SheetDescription className="text-xs text-muted-foreground">
@@ -507,7 +556,9 @@ export default function OrdersPage() {
                 </h4>
 
                 <div className="flex items-center justify-between">
-                  <span className="text-sm font-medium">{formatPhone(selectedOrder.buyerPhone)}</span>
+                  <span className="text-sm font-medium">
+                    {formatPhone(selectedOrder.buyerPhone)}
+                  </span>
                   <a
                     href={`tel:${selectedOrder.buyerPhone}`}
                     className="inline-flex items-center gap-1.5 rounded-md bg-primary/10 px-2.5 py-1 text-xs font-medium text-primary hover:bg-primary/20 transition-colors"
@@ -538,7 +589,9 @@ export default function OrdersPage() {
                     <div className="flex items-start gap-1.5 text-muted-foreground mt-1 pl-5">
                       <MapPin className="size-3.5 shrink-0 mt-0.5 text-muted-foreground" />
                       <span>
-                        {selectedOrder.deliverySubcity ? `${selectedOrder.deliverySubcity} Sub-city, ` : ""}
+                        {selectedOrder.deliverySubcity
+                          ? `${selectedOrder.deliverySubcity} Sub-city, `
+                          : ""}
                         {selectedOrder.deliveryLandmark ?? "Addis Ababa"}
                       </span>
                     </div>
@@ -563,7 +616,9 @@ export default function OrdersPage() {
                           {item.titleSnapshot}
                         </p>
                         <p className="text-xs text-muted-foreground">
-                          {item.variantSnapshot ? `Variant: ${item.variantSnapshot} · ` : ""}
+                          {item.variantSnapshot
+                            ? `Variant: ${item.variantSnapshot} · `
+                            : ""}
                           Qty: {item.quantity} × {formatETB(item.unitPrice)}
                         </p>
                       </div>
@@ -576,7 +631,9 @@ export default function OrdersPage() {
 
                 {/* Total */}
                 <div className="flex items-center justify-between border-t border-border pt-3">
-                  <span className="text-sm font-semibold text-muted-foreground">Total Amount</span>
+                  <span className="text-sm font-semibold text-muted-foreground">
+                    Total Amount
+                  </span>
                   <span className="text-lg font-bold font-mono text-foreground">
                     {formatETB(selectedOrder.totalAmount)}
                   </span>
@@ -604,14 +661,18 @@ export default function OrdersPage() {
 
       {/* Fulfill Confirm Dialog */}
       {fulfillOrder && (
-        <Dialog open={fulfillOpen} onOpenChange={(open) => !open && setFulfillOpen(false)}>
+        <Dialog
+          open={fulfillOpen}
+          onOpenChange={(open) => !open && setFulfillOpen(false)}
+        >
           <DialogContent className="sm:max-w-md">
             <DialogHeader>
               <DialogTitle className="text-lg font-bold">
                 Fulfill Order #{fulfillOrder.id}?
               </DialogTitle>
               <DialogDescription className="text-xs text-muted-foreground">
-                This will mark all {fulfillOrder.items.length} line items as dispatched and notify the customer.
+                This will mark all {fulfillOrder.items.length} line items as
+                dispatched and notify the customer.
               </DialogDescription>
             </DialogHeader>
 
@@ -620,12 +681,20 @@ export default function OrdersPage() {
                 Telegram Bot will send this notification to the buyer:
               </p>
               <p className="italic text-muted-foreground bg-background/50 p-2.5 rounded border border-border/60">
-                "ትዕዛዝዎ #{fulfillOrder.id} ተዘጋጅቷል! / Your order is ready! {fulfillOrder.items.map((i) => `${i.quantity}× ${i.titleSnapshot}`).join(", ")}. The store has dispatched your items."
+                "ትዕዛዝዎ #{fulfillOrder.id} ተዘጋጅቷል! / Your order is ready!{" "}
+                {fulfillOrder.items
+                  .map((i) => `${i.quantity}× ${i.titleSnapshot}`)
+                  .join(", ")}
+                . The store has dispatched your items."
               </p>
             </div>
 
             <DialogFooter className="gap-2 sm:gap-0">
-              <Button variant="outline" size="sm" onClick={() => setFulfillOpen(false)}>
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => setFulfillOpen(false)}
+              >
                 Cancel / ተመለስ
               </Button>
               <Button

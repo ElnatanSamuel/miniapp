@@ -2,7 +2,14 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Banknote, ExternalLink, LogOut, Package, ShoppingBag, X } from "lucide-react";
+import {
+  Banknote,
+  ExternalLink,
+  LogOut,
+  Package,
+  ShoppingBag,
+  X,
+} from "lucide-react";
 
 import { APP_CONFIG } from "@/lib/utils";
 
@@ -96,7 +103,9 @@ export function AppSidebar({ isOpen = false, onClose }: AppSidebarProps) {
               >
                 <Icon className="size-4 shrink-0" />
                 <span>{item.title}</span>
-                <span className="ml-auto text-xs text-muted-foreground/60">{item.titleAmharic}</span>
+                <span className="ml-auto text-xs text-muted-foreground/60">
+                  {item.titleAmharic}
+                </span>
               </Link>
             );
           })}
@@ -105,13 +114,16 @@ export function AppSidebar({ isOpen = false, onClose }: AppSidebarProps) {
         {/* Footer */}
         <div className="border-t border-border p-3 space-y-1">
           <a
-            href={`https://t.me/${APP_CONFIG.channelHandle.replace("@", "")}`}
+            href={`https://t.me/${APP_CONFIG.botHandle}`}
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center justify-between rounded-md px-2.5 py-1.5 text-xs text-muted-foreground hover:bg-muted hover:text-foreground transition-colors"
           >
-            <span>{APP_CONFIG.channelHandle}</span>
-            <ExternalLink className="size-3" />
+            <span className="flex items-center gap-1.5 truncate">
+              <span className="size-1.5 rounded-full bg-emerald-400 shrink-0" />
+              <span className="truncate">@{APP_CONFIG.botHandle}</span>
+            </span>
+            <ExternalLink className="size-3 shrink-0" />
           </a>
           <button
             type="button"

@@ -2,15 +2,32 @@ import { format } from "date-fns";
 
 const currentYear = new Date().getFullYear();
 
+const botHandle = process.env.NEXT_PUBLIC_BOT_HANDLE || "";
+const cleanBotHandle = botHandle.replace(/^@/, "");
+
+const channelHandle = process.env.NEXT_PUBLIC_CHANNEL_HANDLE
+  ? process.env.NEXT_PUBLIC_CHANNEL_HANDLE.startsWith("@")
+    ? process.env.NEXT_PUBLIC_CHANNEL_HANDLE
+    : `@${process.env.NEXT_PUBLIC_CHANNEL_HANDLE}`
+  : cleanBotHandle
+    ? `@${cleanBotHandle}`
+    : "@BoleThrift";
+
+const channelTitle =
+  process.env.NEXT_PUBLIC_CHANNEL_TITLE ||
+  (cleanBotHandle ? `${cleanBotHandle} Shop` : "Bole Thrift");
+
 export const APP_CONFIG = {
   name: "TeleCommerce ET",
-  channelTitle: "Bole Thrift",
-  channelHandle: "@BoleThrift",
+  channelTitle,
+  channelHandle,
+  botHandle: cleanBotHandle || "MusiemhBot",
   version: "2.2.0",
   copyright: `© ${currentYear}, TeleCommerce ET.`,
   meta: {
-    title: "TeleCommerce ET: Merchant Dashboard",
-    description: "Merchant web portal for Telegram channel owners selling in Addis Ababa.",
+    title: `${channelTitle} · TeleCommerce Merchant Dashboard`,
+    description:
+      "Merchant web portal for Telegram channel owners selling in Addis Ababa.",
   },
 };
 
@@ -54,7 +71,10 @@ export function formatPhone(phone: string): string {
 /**
  * Format dates in Africa/Addis_Ababa local timezone (UTC+3)
  */
-export function formatAddisDate(dateStr: string | Date, formatString = "MMM d, yyyy h:mm a"): string {
+export function formatAddisDate(
+  dateStr: string | Date,
+  formatString = "MMM d, yyyy h:mm a",
+): string {
   const date = typeof dateStr === "string" ? new Date(dateStr) : dateStr;
   return format(date, formatString);
 }

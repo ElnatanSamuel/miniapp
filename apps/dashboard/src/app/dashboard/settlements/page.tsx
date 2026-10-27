@@ -35,7 +35,9 @@ export default function SettlementsPage() {
       const summary = await getSettlements();
       setData(summary);
     } catch (err: unknown) {
-      toast.error(err instanceof Error ? err.message : "Failed to load settlements");
+      toast.error(
+        err instanceof Error ? err.message : "Failed to load settlements",
+      );
     } finally {
       setLoading(false);
       setIsRefreshing(false);
@@ -65,7 +67,9 @@ export default function SettlementsPage() {
           disabled={isRefreshing}
           className="gap-2 self-start"
         >
-          <RefreshCw className={`size-3.5 ${isRefreshing ? "animate-spin" : ""}`} />
+          <RefreshCw
+            className={`size-3.5 ${isRefreshing ? "animate-spin" : ""}`}
+          />
           <span>Refresh Ledger / አድስ</span>
         </Button>
       </div>
@@ -174,7 +178,10 @@ export default function SettlementsPage() {
                 </TableHeader>
                 <TableBody>
                   {data.settlements.map((s) => (
-                    <TableRow key={s.id} className="hover:bg-muted/40 transition-colors">
+                    <TableRow
+                      key={s.id}
+                      className="hover:bg-muted/40 transition-colors"
+                    >
                       <TableCell className="font-semibold font-mono text-xs text-foreground">
                         #{s.orderNumber}
                       </TableCell>

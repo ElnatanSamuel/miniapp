@@ -27,21 +27,28 @@ export default function CatalogPage() {
   const [products, setProducts] = React.useState<Product[]>([]);
   const [loading, setLoading] = React.useState(true);
   const [isRefreshing, setIsRefreshing] = React.useState(false);
-  const [filter, setFilter] = React.useState<"all" | "in_stock" | "sold_out">("all");
+  const [filter, setFilter] = React.useState<"all" | "in_stock" | "sold_out">(
+    "all",
+  );
   const [searchQuery, setSearchQuery] = React.useState("");
 
-  const fetchCatalog = React.useCallback(async (showRefreshing = false) => {
-    try {
-      if (showRefreshing) setIsRefreshing(true);
-      const data = await getCatalogProducts({ filter, search: searchQuery });
-      setProducts(data);
-    } catch (err: unknown) {
-      toast.error(err instanceof Error ? err.message : "Failed to load catalog");
-    } finally {
-      setLoading(false);
-      setIsRefreshing(false);
-    }
-  }, [filter, searchQuery]);
+  const fetchCatalog = React.useCallback(
+    async (showRefreshing = false) => {
+      try {
+        if (showRefreshing) setIsRefreshing(true);
+        const data = await getCatalogProducts({ filter, search: searchQuery });
+        setProducts(data);
+      } catch (err: unknown) {
+        toast.error(
+          err instanceof Error ? err.message : "Failed to load catalog",
+        );
+      } finally {
+        setLoading(false);
+        setIsRefreshing(false);
+      }
+    },
+    [filter, searchQuery],
+  );
 
   React.useEffect(() => {
     void fetchCatalog();
@@ -52,22 +59,28 @@ export default function CatalogPage() {
 
     // Optimistic UI update
     setProducts((prev) =>
-      prev.map((p) => (p.id === product.id ? { ...p, isSoldOut: nextState } : p)),
+      prev.map((p) =>
+        p.id === product.id ? { ...p, isSoldOut: nextState } : p,
+      ),
     );
 
     try {
       await toggleProductSoldOut(product.id, nextState);
       if (nextState) {
         toast.warning(
-          `Marked "${product.title.slice(0, 25)}..." as Sold Out. Telegram channel button updated to ❌ ተሽጧል.`
+          `Marked "${product.title.slice(0, 25)}..." as Sold Out. Telegram channel button updated to ❌ ተሽጧል.`,
         );
       } else {
-        toast.success(`Marked "${product.title.slice(0, 25)}..." as In Stock. Order button restored.`);
+        toast.success(
+          `Marked "${product.title.slice(0, 25)}..." as In Stock. Order button restored.`,
+        );
       }
     } catch {
       // Revert optimistic update on failure
       setProducts((prev) =>
-        prev.map((p) => (p.id === product.id ? { ...p, isSoldOut: !nextState } : p)),
+        prev.map((p) =>
+          p.id === product.id ? { ...p, isSoldOut: !nextState } : p,
+        ),
       );
       toast.error("Failed to update product stock status");
     }
@@ -82,7 +95,8 @@ export default function CatalogPage() {
             Channel Catalog / ካታሎግ
           </h1>
           <p className="text-sm text-muted-foreground">
-            Automatically ingested from your Telegram channel feed. Toggle availability to update buttons instantly.
+            Automatically ingested from your Telegram channel feed. Toggle
+            availability to update buttons instantly.
           </p>
         </div>
         <Button
@@ -92,7 +106,9 @@ export default function CatalogPage() {
           disabled={isRefreshing}
           className="gap-2 self-start"
         >
-          <RefreshCw className={`size-3.5 ${isRefreshing ? "animate-spin" : ""}`} />
+          <RefreshCw
+            className={`size-3.5 ${isRefreshing ? "animate-spin" : ""}`}
+          />
           <span>Sync Channel / አድስ</span>
         </Button>
       </div>
@@ -139,7 +155,9 @@ export default function CatalogPage() {
       ) : products.length === 0 ? (
         <Card className="flex flex-col items-center justify-center p-12 text-center">
           <Package className="size-12 text-muted-foreground/50 mb-3" />
-          <h3 className="text-lg font-medium text-foreground">No products found</h3>
+          <h3 className="text-lg font-medium text-foreground">
+            No products found
+          </h3>
           <p className="text-sm text-muted-foreground mt-1 max-w-sm">
             {searchQuery
               ? "No catalog items matched your search query. Try another term."
@@ -149,7 +167,10 @@ export default function CatalogPage() {
       ) : (
         <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {products.map((product) => {
-            const totalStock = product.variants.reduce((acc, v) => acc + v.stockQuantity, 0);
+            const totalStock = product.variants.reduce(
+              (acc, v) => acc + v.stockQuantity,
+              0,
+            );
 
             return (
               <Card
@@ -176,7 +197,10 @@ export default function CatalogPage() {
 
                   <div className="absolute top-2 left-2 flex gap-1">
                     {product.isSoldOut ? (
-                      <Badge variant="destructive" className="font-semibold text-xs shadow-md">
+                      <Badge
+                        variant="destructive"
+                        className="font-semibold text-xs shadow-md"
+                      >
                         ❌ Sold Out / ተሽጧል
                       </Badge>
                     ) : (
@@ -187,7 +211,10 @@ export default function CatalogPage() {
                   </div>
 
                   <div className="absolute top-2 right-2">
-                    <Badge variant="secondary" className="backdrop-blur-md bg-background/80 font-bold text-xs">
+                    <Badge
+                      variant="secondary"
+                      className="backdrop-blur-md bg-background/80 font-bold text-xs"
+                    >
                       {formatETB(product.price)}
                     </Badge>
                   </div>
@@ -203,7 +230,9 @@ export default function CatalogPage() {
                 <CardContent className="p-4 pt-0 flex-1 space-y-3">
                   {/* Variants */}
                   <div className="space-y-1.5">
-                    <span className="text-xs text-muted-foreground font-medium">Variants & Stock:</span>
+                    <span className="text-xs text-muted-foreground font-medium">
+                      Variants & Stock:
+                    </span>
                     <div className="flex flex-wrap gap-1.5">
                       {product.variants.map((v) => (
                         <span
@@ -215,7 +244,9 @@ export default function CatalogPage() {
                           }`}
                         >
                           <span>{v.variantName}</span>
-                          <span className="text-[10px] text-muted-foreground">({v.stockQuantity})</span>
+                          <span className="text-[10px] text-muted-foreground">
+                            ({v.stockQuantity})
+                          </span>
                         </span>
                       ))}
                     </div>
@@ -229,7 +260,9 @@ export default function CatalogPage() {
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-1.5 text-xs text-primary/80 hover:text-primary transition-colors"
                     >
-                      <span>View channel post #{product.telegramMessageId}</span>
+                      <span>
+                        View channel post #{product.telegramMessageId}
+                      </span>
                       <ExternalLink className="size-3" />
                     </a>
                   )}
@@ -247,7 +280,9 @@ export default function CatalogPage() {
                       htmlFor={`sold-out-${product.id}`}
                       className="text-xs font-medium cursor-pointer text-foreground select-none"
                     >
-                      {!product.isSoldOut ? "Available for Order" : "Sold Out (ተሽጧል)"}
+                      {!product.isSoldOut
+                        ? "Available for Order"
+                        : "Sold Out (ተሽጧል)"}
                     </label>
                   </div>
 

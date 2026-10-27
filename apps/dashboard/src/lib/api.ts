@@ -1,7 +1,13 @@
-import type { Order, Product, Settlement } from "@tce/shared";
+import {
+  DM_TEMPLATES,
+  type Order,
+  type Product,
+  type Settlement,
+} from "@tce/shared";
 import { z } from "zod";
 
 import { MOCK_ORDERS, MOCK_PRODUCTS, MOCK_SETTLEMENTS } from "./mock";
+import { APP_CONFIG } from "./utils";
 
 // In-memory runtime state holding mutations
 const ordersState: Order[] = [...MOCK_ORDERS];
@@ -91,7 +97,9 @@ export interface SettlementsSummary {
  * Fetch all orders or orders filtered by active tab.
  * Ready for SSE/WebSocket subscription upgrade.
  */
-export async function getOrders(tab?: "to_fulfill" | "completed" | "expired"): Promise<Order[]> {
+export async function getOrders(
+  tab?: "to_fulfill" | "completed" | "expired",
+): Promise<Order[]> {
   // Simulated small network delay
   await new Promise((res) => setTimeout(res, 80));
 
@@ -103,11 +111,15 @@ export async function getOrders(tab?: "to_fulfill" | "completed" | "expired"): P
   } else if (tab === "completed") {
     filtered = filtered.filter((o) => o.status === "fulfilled");
   } else if (tab === "expired") {
-    filtered = filtered.filter((o) => o.status === "cancelled" || o.status === "pending_payment");
+    filtered = filtered.filter(
+      (o) => o.status === "cancelled" || o.status === "pending_payment",
+    );
   }
 
   // Sort descending by created date
-  filtered.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
+  filtered.sort(
+    (a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime(),
+  );
 
   return z.array(OrderSchema).parse(filtered);
 }
@@ -119,11 +131,17 @@ export async function getOrderStats(): Promise<OrderStats> {
   await new Promise((res) => setTimeout(res, 40));
 
   const toFulfillCount = ordersState.filter((o) => o.status === "paid").length;
-  const expiredCount = ordersState.filter((o) => o.status === "cancelled").length;
+  const expiredCount = ordersState.filter(
+    (o) => o.status === "cancelled",
+  ).length;
 
   // Revenue today & this week computed from completed and paid orders
   const now = new Date();
-  const startOfToday = new Date(now.getFullYear(), now.getMonth(), now.getDate()).getTime();
+  const startOfToday = new Date(
+    now.getFullYear(),
+    now.getMonth(),
+    now.getDate(),
+  ).getTime();
   const sevenDaysAgo = now.getTime() - 7 * 24 * 60 * 60 * 1000;
 
   let revenueToday = 0;
@@ -163,7 +181,9 @@ export async function markOrderFulfilled(orderId: string): Promise<Order> {
 
   const order = ordersState[orderIndex];
   if (order.status !== "paid") {
-    throw new Error(`Cannot fulfill order ${orderId} with status ${order.status}`);
+    throw new Error(
+      `Cannot fulfill order ${orderId} with status ${order.status}`,
+    );
   }
 
   const updatedOrder: Order = {
@@ -172,6 +192,35 @@ export async function markOrderFulfilled(orderId: string): Promise<Order> {
   };
 
   ordersState[orderIndex] = updatedOrder;
+
+  // Send real Telegram DM notification to the buyer via Telegram Bot API
+  try {
+    const itemSummary = updatedOrder.items
+      .map(
+        (item) =>
+          `${item.quantity}× ${item.titleSnapshot}${item.variantSnapshot ? ` (${item.variantSnapshot})` : ""}`,
+      )
+      .join(", ");
+
+    const text = DM_TEMPLATES.orderReady(
+      updatedOrder.id.replace(/^#/, ""),
+      itemSummary,
+    );
+
+    // Call internal Next.js API route that has access to BOT_TOKEN
+    await fetch("/api/telegram/send-dm", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        chatId: updatedOrder.buyerTelegramId,
+        text,
+      }),
+    });
+  } catch (err) {
+    // Non-blocking in case of mock user ID or network glitch
+    console.warn("Telegram notification attempt:", err);
+  }
+
   return OrderSchema.parse(updatedOrder);
 }
 
@@ -184,12 +233,28 @@ export async function getCatalogProducts(options?: {
 }): Promise<Product[]> {
   await new Promise((res) => setTimeout(res, 80));
 
-  let results = [...productsState];
+  const channelSlug = APP_CONFIG.channelHandle.replace(/^@/, "");
+  let results = productsState.map((p) => {
+    if (p.telegramPostUrl && channelSlug && channelSlug !== "BoleThrift") {
+      return {
+        ...p,
+        telegramPostUrl: p.telegramPostUrl.replace(
+          "https://t.me/BoleThrift",
+          `https://t.me/${channelSlug}`,
+        ),
+      };
+    }
+    return p;
+  });
 
   if (options?.filter === "in_stock") {
-    results = results.filter((p) => !p.isSoldOut && p.variants.some((v) => v.stockQuantity > 0));
+    results = results.filter(
+      (p) => !p.isSoldOut && p.variants.some((v) => v.stockQuantity > 0),
+    );
   } else if (options?.filter === "sold_out") {
-    results = results.filter((p) => p.isSoldOut || p.variants.every((v) => v.stockQuantity === 0));
+    results = results.filter(
+      (p) => p.isSoldOut || p.variants.every((v) => v.stockQuantity === 0),
+    );
   }
 
   if (options?.search) {
@@ -204,7 +269,10 @@ export async function getCatalogProducts(options?: {
  * Toggle product sold-out state.
  * In production, triggers Bot API editMessageReplyMarkup to ❌ ተሽጧል / Sold Out.
  */
-export async function toggleProductSoldOut(productId: string, isSoldOut: boolean): Promise<Product> {
+export async function toggleProductSoldOut(
+  productId: string,
+  isSoldOut: boolean,
+): Promise<Product> {
   await new Promise((res) => setTimeout(res, 100));
 
   const index = productsState.findIndex((p) => p.id === productId);
@@ -224,7 +292,11 @@ export async function toggleProductSoldOut(productId: string, isSoldOut: boolean
 /**
  * Update stock count for a single variant.
  */
-export async function updateVariantStock(productId: string, variantId: string, newStock: number): Promise<Product> {
+export async function updateVariantStock(
+  productId: string,
+  variantId: string,
+  newStock: number,
+): Promise<Product> {
   await new Promise((res) => setTimeout(res, 100));
 
   const pIndex = productsState.findIndex((p) => p.id === productId);
@@ -263,7 +335,9 @@ export async function getSettlements(): Promise<SettlementsSummary> {
   const now = new Date();
   const sevenDaysAgo = now.getTime() - 7 * 24 * 60 * 60 * 1000;
   const thisWeekPayout = settlementsState
-    .filter((s) => s.status === "paid" && new Date(s.date).getTime() >= sevenDaysAgo)
+    .filter(
+      (s) => s.status === "paid" && new Date(s.date).getTime() >= sevenDaysAgo,
+    )
     .reduce((acc, curr) => acc + curr.totalAmount, 0);
 
   return {

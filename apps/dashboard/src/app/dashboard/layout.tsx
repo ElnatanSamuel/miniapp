@@ -4,6 +4,7 @@ import * as React from "react";
 import { Menu, Radio } from "lucide-react";
 
 import { AppSidebar } from "@/components/AppSidebar";
+import { TelegramStatusBadge } from "@/components/TelegramStatusBadge";
 import { Button } from "@/components/ui";
 import { APP_CONFIG } from "@/lib/utils";
 
@@ -39,18 +40,20 @@ export default function DashboardLayout({
             </div>
           </div>
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2.5 sm:gap-3">
+            <TelegramStatusBadge />
+
             <div className="flex items-center gap-1.5 rounded-full border border-emerald-500/20 bg-emerald-500/10 px-2.5 py-1 text-xs font-medium text-emerald-400">
               <Radio className="size-3 animate-pulse text-emerald-400" />
-              <span>Live Orders Stream</span>
-              <span className="hidden md:inline text-emerald-500/70">/ ቀጥታ</span>
+              <span className="hidden sm:inline">Live Orders</span>
+              <span className="hidden md:inline text-emerald-500/70">
+                / ቀጥታ
+              </span>
             </div>
           </div>
         </header>
 
-        <main className="flex-1 p-4 md:p-6 lg:p-8">
-          {children}
-        </main>
+        <main className="flex-1 p-4 md:p-6 lg:p-8">{children}</main>
       </div>
     </div>
   );
